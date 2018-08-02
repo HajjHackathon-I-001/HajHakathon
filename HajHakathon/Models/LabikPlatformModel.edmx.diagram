@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="1a2f5da42f3642a5b88f713379054ab6" Name="Diagram1" ZoomLevel="94">
+        <EntityTypeShape EntityType="LabickModel.G_AirLineCompany" Width="2.5" PointX="3" PointY="18.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="LabickModel.G_Companies" Width="1.5" PointX="3" PointY="28.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="LabickModel.G_TawafCompany" Width="1.5" PointX="5.25" PointY="13" IsExpanded="true" />
+        <EntityTypeShape EntityType="LabickModel.G_TawafCompany_User" Width="1.5" PointX="7.5" PointY="10" IsExpanded="true" />
+        <EntityTypeShape EntityType="LabickModel.Sys_Cities" Width="1.5" PointX="3" PointY="13.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="LabickModel.Sys_Countaries" Width="1.5" PointX="0.75" PointY="7" IsExpanded="true" />
+        <EntityTypeShape EntityType="LabickModel.Sys_Languages" Width="1.5" PointX="0.75" PointY="3.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="LabickModel.Sys_Menues" Width="1.5" PointX="2.75" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="LabickModel.Sys_Roles" Width="1.5" PointX="2.75" PointY="24.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="LabickModel.Sys_Types" Width="1.5" PointX="0.75" PointY="19" IsExpanded="true" />
+        <EntityTypeShape EntityType="LabickModel.Sys_Users" Width="1.5" PointX="8" PointY="0.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="LabickModel.Sys_UsersAndRoles" Width="1.5" PointX="5" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="LabickModel.G_AirLineCompany_User" Width="1.5" PointX="5.25" PointY="6.875" IsExpanded="true" />
+        <AssociationConnector Association="LabickModel.FK_G_AirLineCompany_Sys_Types" ManuallyRouted="false" />
+        <AssociationConnector Association="LabickModel.FK_G_AirLineCompany_User_G_AirLineCompany" ManuallyRouted="false" />
+        <AssociationConnector Association="LabickModel.FK_G_Companies_Sys_Types" ManuallyRouted="false" />
+        <AssociationConnector Association="LabickModel.FK_G_TawafCompany_Sys_Cities" ManuallyRouted="false" />
+        <AssociationConnector Association="LabickModel.FK_G_TawafCompany_Sys_Types" ManuallyRouted="false" />
+        <AssociationConnector Association="LabickModel.FK_G_TawafCompany_User_G_TawafCompany" ManuallyRouted="false" />
+        <AssociationConnector Association="LabickModel.FK_Sys_Cities_Sys_Countaries" ManuallyRouted="false" />
+        <AssociationConnector Association="LabickModel.FK_Sys_UsersAndRoles_Sys_Menues" ManuallyRouted="false" />
+        <AssociationConnector Association="LabickModel.FK_Sys_UsersAndRoles_Sys_Roles" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="LabickModel.Devices" Width="1.5" PointX="10.375" PointY="3.875" />
+        <EntityTypeShape EntityType="LabickModel.EPCs" Width="1.5" PointX="10.375" PointY="1.125" />
+        <EntityTypeShape EntityType="LabickModel.Sys_Area" Width="1.5" PointX="13.375" PointY="9.75" />
+        <AssociationConnector Association="LabickModel.FK_Sys_Area_Sys_Cities" />
+        <EntityTypeShape EntityType="LabickModel.TagEvents" Width="1.5" PointX="12.625" PointY="1.25" />
+        <AssociationConnector Association="LabickModel.FK_TagEvents_Devices" />
+        <AssociationConnector Association="LabickModel.FK_TagEvents_EPCs" />
+        <EntityTypeShape EntityType="LabickModel.Sys_ChekPoints" Width="1.5" PointX="15.625" PointY="6.875" />
+        <AssociationConnector Association="LabickModel.FK_Sys_ChekPoints_Sys_ChekPoints" />
+        <AssociationConnector Association="LabickModel.FK_Sys_ChekPoints_Sys_Area" />
+        <EntityTypeShape EntityType="LabickModel.Sys_Zone" Width="1.5" PointX="7.375" PointY="6.75" />
+        <AssociationConnector Association="LabickModel.FK_Sys_Zone_Devices" />
+        <AssociationConnector Association="LabickModel.FK_Sys_Zone_Devices1" />
+        <AssociationConnector Association="LabickModel.FK_Sys_Zone_Sys_Area" />
+        <EntityTypeShape EntityType="LabickModel.G_Users" Width="1.5" PointX="15.625" PointY="0.75" />
+        <AssociationConnector Association="LabickModel.FK_G_Users_EPCs" />
+        <AssociationConnector Association="LabickModel.FK_G_AirLineCompany_User_G_Users" />
+        <AssociationConnector Association="LabickModel.FK_G_TawafCompany_User_G_Users" />
+        <AssociationConnector Association="LabickModel.FK_G_Users_Sys_Countaries" />
+        <AssociationConnector Association="LabickModel.FK_G_Users_Sys_Languages" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

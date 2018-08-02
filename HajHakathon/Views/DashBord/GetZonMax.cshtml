@@ -1,0 +1,57 @@
+﻿@model IEnumerable<HajHakathon.Models.Sys_Zone>
+@using HajHakathon.Models
+@{
+    LabickEntities db = new LabickEntities();
+    ViewBag.Title = "GetZonMax";
+    Layout = null;
+    string rowbgcolr;
+}
+ 
+
+<table class="table table-de mb-0">
+    <thead>
+        <tr>
+            <th>zone</th>
+            <th>Pilgrims</th>
+            <th>Max </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var z in Model)
+        {
+            var tagevent = db.TagEvents.Where(a => a.DeviceId == z.InDeviceID && a.DeviceId != z.OutDeviceID).Count();
+            if (tagevent >= z.MaxCount)
+            {
+                rowbgcolr = "warning";
+
+            }
+            else
+            {
+                rowbgcolr = "success";
+            }
+            <tr class="@rowbgcolr">
+
+                <td>@z.Sys_Area.AreaNameAr </td>
+
+                <td>@tagevent</td>
+                <td>@z.MaxCount</td>
+                <td>
+                   
+                </td>
+            </tr>
+
+        }
+    </tbody>
+</table>
+
+@section JSScript{
+    <script src="@Url.Content("~/signalr/hubs")"></script>
+    
+<script src="~/Scripts/knockout-3.4.2.js"></script>
+<script src="~/Scripts/knockout.mapping-latest.js"></script>
+<script src="~/Scripts/jquery-1.10.2.js"></script>
+<script src="~/Scripts/jquery.signalR-2.3.0.js"></script>
+    }
+
+@RenderSection("Scripts", required: false)

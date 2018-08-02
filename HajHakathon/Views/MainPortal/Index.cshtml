@@ -1,0 +1,22 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <div>
+        @Html.ActionLink("الدخول للوحة تحكم الادمن","Login", "LoginSystemAdmin",new { returnUrl="", idval= "AdminPortal" },null) 
+        
+        <br/>
+        @Html.ActionLink("دخول المستخدمين", "Login", "LoginSystemAdmin", new { idval = "UserPortal" },null)
+        
+    </div>
+</body>
+</html>

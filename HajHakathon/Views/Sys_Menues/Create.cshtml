@@ -1,0 +1,208 @@
+﻿@model HajHakathon.Models.Sys_Menues
+
+@{
+    ViewBag.Title = "Create";
+}
+
+
+
+<div id="crypto-stats-3" class="row">
+
+    <div class="col-xl-12 col-12">
+
+        <div class="card crypto-card-3 pull-up">
+            <div class="row">
+
+                <div class="col-xl-12 col-12">
+                    <div class="row">
+                        <div class="col-lg-12 col-12">
+                            <div class="card">
+                                <div class="col-md-12">
+                                    <div class="card">
+                                        <div class="card-header">
+                                            <h4 class="card-title" id="basic-layout-form"></h4>
+                                            <a class="heading-elements-toggle"><i class="la la-ellipsis-v font-medium-3"></i></a>
+                                            <div class="heading-elements">
+                                                <ul class="list-inline mb-0"></ul>
+                                            </div>
+                                        </div>
+                                        <div class="card-content collapse show">
+                                            <div class="card-body">
+                                                <div class="card-text">
+
+                                                </div>
+                                                <!-- Form Start Code -->
+                               @using (Html.BeginForm("Create", null, FormMethod.Post, new { @class = "form", enctype = "multipart/form-data" }))
+								{
+                                    @Html.AntiForgeryToken()
+                                    
+                                    <div class="form-body">
+
+                                        <h4 class="form-section"><i class="ft-user"></i>@ViewBag.Title</h4>
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+		</div>
+		</div>
+		<div class="row">  
+          
+		 <div class="col-md-6">
+         <div class="form-group">                                
+            @Html.LabelFor(model => model.NameAr)
+			
+			
+                @Html.EditorFor(model => model.NameAr,new { htmlAttributes = new {  @class = "form-control", @placeholder = @"" + Html.DisplayNameFor(model => model.NameAr) + @"" } })
+				
+                @Html.ValidationMessageFor(model => model.NameAr, "", new { @class = "text-danger" })
+				</div>
+				</div>
+				
+          
+		 <div class="col-md-6">
+         <div class="form-group">                                
+            @Html.LabelFor(model => model.NameEn)
+			
+			
+                @Html.EditorFor(model => model.NameEn,new { htmlAttributes = new {  @class = "form-control", @placeholder = @"" + Html.DisplayNameFor(model => model.NameEn) + @"" } })
+				
+                @Html.ValidationMessageFor(model => model.NameEn, "", new { @class = "text-danger" })
+				</div>
+				</div>
+				
+          
+		 <div class="col-md-6">
+         <div class="form-group">                                
+            @Html.LabelFor(model => model.Action)
+			
+			
+                @Html.EditorFor(model => model.Action,new { htmlAttributes = new {  @class = "form-control", @placeholder = @"" + Html.DisplayNameFor(model => model.Action) + @"" } })
+				
+                @Html.ValidationMessageFor(model => model.Action, "", new { @class = "text-danger" })
+				</div>
+				</div>
+				
+          
+		 <div class="col-md-6">
+         <div class="form-group">                                
+            @Html.LabelFor(model => model.Controller)
+			
+			
+                @Html.EditorFor(model => model.Controller,new { htmlAttributes = new {  @class = "form-control", @placeholder = @"" + Html.DisplayNameFor(model => model.Controller) + @"" } })
+				
+                @Html.ValidationMessageFor(model => model.Controller, "", new { @class = "text-danger" })
+				</div>
+				</div>
+				
+          
+		 <div class="col-md-6">
+         <div class="form-group">                                
+            @Html.LabelFor(model => model.Area)
+			
+			
+                @Html.EditorFor(model => model.Area,new { htmlAttributes = new {  @class = "form-control", @placeholder = @"" + Html.DisplayNameFor(model => model.Area) + @"" } })
+				
+                @Html.ValidationMessageFor(model => model.Area, "", new { @class = "text-danger" })
+				</div>
+				</div>
+				
+          
+		 <div class="col-md-6">
+         <div class="form-group">                                
+            @Html.LabelFor(model => model.Description)
+			
+			
+                @Html.EditorFor(model => model.Description,new { htmlAttributes = new {  @class = "form-control", @placeholder = @"" + Html.DisplayNameFor(model => model.Description) + @"" } })
+				
+                @Html.ValidationMessageFor(model => model.Description, "", new { @class = "text-danger" })
+				</div>
+				</div>
+				
+          
+		 <div class="col-md-6">
+         <div class="form-group">                                
+            @Html.LabelFor(model => model.IsActive)
+			
+                <div>
+    				<span>
+                    @Html.EditorFor(model => model.IsActive, new { htmlAttributes = new { @class = "switchery-xs", @cheked = "cheked" } })
+    				</span>
+    				</div>
+                    @Html.ValidationMessageFor(model => model.IsActive, "", new { @class = "text-danger" })
+	
+				</div>
+				</div>
+				
+          
+		 <div class="col-md-6">
+         <div class="form-group">                                
+            @Html.LabelFor(model => model.Regdate)
+			
+			
+                @Html.EditorFor(model => model.Regdate,new { htmlAttributes = new {  @class = "form-control", @placeholder = @"" + Html.DisplayNameFor(model => model.Regdate) + @"" } })
+				
+                @Html.ValidationMessageFor(model => model.Regdate, "", new { @class = "text-danger" })
+				</div>
+				</div>
+				
+          
+		 <div class="col-md-6">
+         <div class="form-group">                                
+            @Html.LabelFor(model => model.ReguserID)
+			
+			
+                @Html.EditorFor(model => model.ReguserID,new { htmlAttributes = new {  @class = "form-control", @placeholder = @"" + Html.DisplayNameFor(model => model.ReguserID) + @"" } })
+				
+                @Html.ValidationMessageFor(model => model.ReguserID, "", new { @class = "text-danger" })
+				</div>
+				</div>
+				
+          
+		 <div class="col-md-6">
+         <div class="form-group">                                
+            @Html.LabelFor(model => model.ParentID)
+			
+			
+                @Html.EditorFor(model => model.ParentID,new { htmlAttributes = new {  @class = "form-control", @placeholder = @"" + Html.DisplayNameFor(model => model.ParentID) + @"" } })
+				
+                @Html.ValidationMessageFor(model => model.ParentID, "", new { @class = "text-danger" })
+				</div>
+				</div>
+				
+												
+                                            
+											
+									</div>
+                                    <div class="row">
+                                            <div class="form-actions">
+                                                 <button type="submit" class="btn btn-primary">
+                                                    <i class="la la-check-square-o"></i> @HajHakathon.Resources.GbResoures.Save
+                                                </button>
+                                                <button type="button" class="btn btn-warning mr-1">
+                                                    <i class="ft-x"></i> @HajHakathon.Resources.GbResoures.Cancel
+                                                </button>
+                                            </div>
+										</div>
+
+
+
+                                                <!-- Form End Code -->
+                                            </div>
+											}
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+

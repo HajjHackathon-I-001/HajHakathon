@@ -1,0 +1,300 @@
+﻿@model HajHakathon.Models.G_AirLineCompany
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+
+<div id="crypto-stats-3" class="row">
+
+    <div class="col-xl-12 col-12">
+
+        <div class="card crypto-card-3 pull-up">
+            <div class="row">
+
+                <div class="col-xl-12 col-12">
+                    <div class="row">
+                        <div class="col-lg-12 col-12">
+                            <div class="card">
+                                <div class="col-md-12">
+                                    <div class="card">
+                                        <div class="card-header">
+                                            <h4 class="card-title" id="basic-layout-form"></h4>
+                                            <a class="heading-elements-toggle"><i class="la la-ellipsis-v font-medium-3"></i></a>
+                                            <div class="heading-elements">
+                                                <ul class="list-inline mb-0"></ul>
+                                            </div>
+                                        </div>
+                                        <div class="card-content collapse show">
+                                            <div class="card-body">
+                                                <div class="card-text">
+
+                                                </div>
+                                                <!-- Form Start Code -->
+                               @using (Html.BeginForm("Edit", null, FormMethod.Post, new { @class = "form", enctype = "multipart/form-data" }))
+								{
+                                    @Html.AntiForgeryToken()
+                                    
+                                    <div class="form-body">
+
+                                        <h4 class="form-section"><i class="ft-user"></i>@ViewBag.Title</h4>
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+		</div>
+		</div>
+		<div class="row">  
+
+        
+		 <div class="col-md-6">
+         <div class="form-group">                                
+            @Html.LabelFor(model => model.NameAr)
+			
+			
+                @Html.EditorFor(model => model.NameAr,new { htmlAttributes = new {  @class = "form-control", @placeholder = @"" + Html.DisplayNameFor(model => model.NameAr) + @"" } })
+				
+                @Html.ValidationMessageFor(model => model.NameAr, "", new { @class = "text-danger" })
+				</div>
+				</div>
+				
+
+        
+		 <div class="col-md-6">
+         <div class="form-group">                                
+            @Html.LabelFor(model => model.NameEn)
+			
+			
+                @Html.EditorFor(model => model.NameEn,new { htmlAttributes = new {  @class = "form-control", @placeholder = @"" + Html.DisplayNameFor(model => model.NameEn) + @"" } })
+				
+                @Html.ValidationMessageFor(model => model.NameEn, "", new { @class = "text-danger" })
+				</div>
+				</div>
+				
+
+        
+		 <div class="col-md-6">
+         <div class="form-group">                                
+            @Html.LabelFor(model => model.Code)
+			
+			
+                @Html.EditorFor(model => model.Code,new { htmlAttributes = new {  @class = "form-control", @placeholder = @"" + Html.DisplayNameFor(model => model.Code) + @"" } })
+				
+                @Html.ValidationMessageFor(model => model.Code, "", new { @class = "text-danger" })
+				</div>
+				</div>
+				
+
+        
+		 <div class="col-md-6">
+         <div class="form-group">                                
+            @Html.LabelFor(model => model.Email)
+			
+			
+                @Html.EditorFor(model => model.Email,new { htmlAttributes = new {  @class = "form-control", @placeholder = @"" + Html.DisplayNameFor(model => model.Email) + @"" } })
+				
+                @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+				</div>
+				</div>
+				
+
+        
+		 <div class="col-md-6">
+         <div class="form-group">                                
+            @Html.LabelFor(model => model.Tel)
+			
+			
+                @Html.EditorFor(model => model.Tel,new { htmlAttributes = new {  @class = "form-control", @placeholder = @"" + Html.DisplayNameFor(model => model.Tel) + @"" } })
+				
+                @Html.ValidationMessageFor(model => model.Tel, "", new { @class = "text-danger" })
+				</div>
+				</div>
+				
+
+        
+		 <div class="col-md-6">
+         <div class="form-group">                                
+            @Html.LabelFor(model => model.Fax)
+			
+			
+                @Html.EditorFor(model => model.Fax,new { htmlAttributes = new {  @class = "form-control", @placeholder = @"" + Html.DisplayNameFor(model => model.Fax) + @"" } })
+				
+                @Html.ValidationMessageFor(model => model.Fax, "", new { @class = "text-danger" })
+				</div>
+				</div>
+				
+
+        
+		 <div class="col-md-6">
+         <div class="form-group">                                
+			
+            @Html.LabelFor(model => model.TypeID, "TypeID")
+			
+				
+                @Html.DropDownList("TypeID", null, htmlAttributes: new {  @class = "form-control", @placeholder = @"" + Html.DisplayNameFor(model => model.TypeID) + @"" })
+				
+                @Html.ValidationMessageFor(model => model.TypeID, "", new { @class = "text-danger" })
+				</div>
+				</div>
+				
+
+        
+		 <div class="col-md-6">
+         <div class="form-group">                                
+            @Html.LabelFor(model => model.TravelID)
+			
+			
+                @Html.EditorFor(model => model.TravelID,new { htmlAttributes = new {  @class = "form-control", @placeholder = @"" + Html.DisplayNameFor(model => model.TravelID) + @"" } })
+				
+                @Html.ValidationMessageFor(model => model.TravelID, "", new { @class = "text-danger" })
+				</div>
+				</div>
+				
+
+        
+		 <div class="col-md-6">
+         <div class="form-group">                                
+            @Html.LabelFor(model => model.ComeFrom)
+			
+			
+                @Html.EditorFor(model => model.ComeFrom,new { htmlAttributes = new {  @class = "form-control", @placeholder = @"" + Html.DisplayNameFor(model => model.ComeFrom) + @"" } })
+				
+                @Html.ValidationMessageFor(model => model.ComeFrom, "", new { @class = "text-danger" })
+				</div>
+				</div>
+				
+
+        
+		 <div class="col-md-6">
+         <div class="form-group">                                
+            @Html.LabelFor(model => model.ComeTo)
+			
+			
+                @Html.EditorFor(model => model.ComeTo,new { htmlAttributes = new {  @class = "form-control", @placeholder = @"" + Html.DisplayNameFor(model => model.ComeTo) + @"" } })
+				
+                @Html.ValidationMessageFor(model => model.ComeTo, "", new { @class = "text-danger" })
+				</div>
+				</div>
+				
+
+        
+		 <div class="col-md-6">
+         <div class="form-group">                                
+            @Html.LabelFor(model => model.IsActive)
+			
+                <div>
+                    <span>
+                    @Html.EditorFor(model => model.IsActive, new { htmlAttributes = new { @class = "switchery-xs", @cheked = "cheked" } })
+    				</span>
+    				</div>
+                    @Html.ValidationMessageFor(model => model.IsActive, "", new { @class = "text-danger" })
+	
+				</div>
+				</div>
+				
+
+        
+		 <div class="col-md-6">
+         <div class="form-group">                                
+            @Html.LabelFor(model => model.IsDeleted)
+			
+                <div>
+                    <span>
+                    @Html.EditorFor(model => model.IsDeleted, new { htmlAttributes = new { @class = "switchery-xs", @cheked = "cheked" } })
+    				</span>
+    				</div>
+                    @Html.ValidationMessageFor(model => model.IsDeleted, "", new { @class = "text-danger" })
+	
+				</div>
+				</div>
+				
+
+        
+		 <div class="col-md-6">
+         <div class="form-group">                                
+            @Html.LabelFor(model => model.CreatedDate)
+			
+			
+                @Html.EditorFor(model => model.CreatedDate,new { htmlAttributes = new {  @class = "form-control", @placeholder = @"" + Html.DisplayNameFor(model => model.CreatedDate) + @"" } })
+				
+                @Html.ValidationMessageFor(model => model.CreatedDate, "", new { @class = "text-danger" })
+				</div>
+				</div>
+				
+
+        
+		 <div class="col-md-6">
+         <div class="form-group">                                
+            @Html.LabelFor(model => model.CreatedUserID)
+			
+			
+                @Html.EditorFor(model => model.CreatedUserID,new { htmlAttributes = new {  @class = "form-control", @placeholder = @"" + Html.DisplayNameFor(model => model.CreatedUserID) + @"" } })
+				
+                @Html.ValidationMessageFor(model => model.CreatedUserID, "", new { @class = "text-danger" })
+				</div>
+				</div>
+				
+
+        
+		 <div class="col-md-6">
+         <div class="form-group">                                
+            @Html.LabelFor(model => model.LastUpdatedDate)
+			
+			
+                @Html.EditorFor(model => model.LastUpdatedDate,new { htmlAttributes = new {  @class = "form-control", @placeholder = @"" + Html.DisplayNameFor(model => model.LastUpdatedDate) + @"" } })
+				
+                @Html.ValidationMessageFor(model => model.LastUpdatedDate, "", new { @class = "text-danger" })
+				</div>
+				</div>
+				
+
+        
+		 <div class="col-md-6">
+         <div class="form-group">                                
+            @Html.LabelFor(model => model.LastUpdatedUserID)
+			
+			
+                @Html.EditorFor(model => model.LastUpdatedUserID,new { htmlAttributes = new {  @class = "form-control", @placeholder = @"" + Html.DisplayNameFor(model => model.LastUpdatedUserID) + @"" } })
+				
+                @Html.ValidationMessageFor(model => model.LastUpdatedUserID, "", new { @class = "text-danger" })
+				</div>
+				</div>
+				
+												
+                                            
+											
+									</div>
+                                    <div class="row">
+                                            <div class="form-actions">
+                                                 <button type="submit" class="btn btn-primary">
+                                                    <i class="la la-check-square-o"></i> @HajHakathon.Resources.GbResoures.Save
+                                                </button>
+                                                <button type="button" class="btn btn-warning mr-1">
+                                                    <i class="ft-x"></i> @HajHakathon.Resources.GbResoures.Cancel
+                                                </button>
+                                            </div>
+										</div>
+
+
+
+                                                <!-- Form End Code -->
+                                            </div>
+											}
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+

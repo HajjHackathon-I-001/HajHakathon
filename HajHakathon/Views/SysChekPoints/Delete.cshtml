@@ -1,0 +1,68 @@
+﻿@model HajHakathon.Models.Sys_ChekPoints
+
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+
+
+
+<div>
+    <div class="col-lg-12 col-sm-12 col-xs-12">
+        <div class="widget">
+            <div class="widget-header bordered-top bordered-palegreen">
+                <span class="widget-caption"></span>
+            </div>
+            <div class="widget-body">
+                <div class="collapse in">
+				<h3>هل انت متأكد من اتمام الحذف ؟</h3>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.chekpointNameAr)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.chekpointNameAr)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.chekpointNameEn)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.chekpointNameEn)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Devices.DeviceIdentity)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Devices.DeviceIdentity)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Sys_Area.AreaNameAr)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Sys_Area.AreaNameAr)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="حذف" class="btn btn-danger shiny" /> 
+            @Html.ActionLink("رجوع للقائمة", "Index",null,new{@class="btn btn-maroon shiny"})
+        </div>
+    }
+	</div>
+	</div>
+	</div>
+	</div>
+</div>

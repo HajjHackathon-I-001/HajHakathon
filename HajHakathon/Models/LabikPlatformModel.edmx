@@ -1,0 +1,1850 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="LabickModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Devices">
+          <Key>
+            <PropertyRef Name="DeviceId" />
+          </Key>
+          <Property Name="DeviceId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="DeviceIdentity" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="DeviceName" Type="nvarchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="EPCs">
+          <Key>
+            <PropertyRef Name="EPCId" />
+          </Key>
+          <Property Name="EPCId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="EPC" Type="varchar" MaxLength="124" Nullable="false" />
+        </EntityType>
+        <EntityType Name="G_AirLineCompany">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="NameAr" Type="nvarchar" MaxLength="50" />
+          <Property Name="NameEn" Type="nvarchar" MaxLength="50" />
+          <Property Name="Code" Type="nvarchar" MaxLength="50" />
+          <Property Name="Email" Type="nvarchar" MaxLength="100" />
+          <Property Name="Tel" Type="nvarchar" MaxLength="100" />
+          <Property Name="Fax" Type="nvarchar" MaxLength="100" />
+          <Property Name="TypeID" Type="int" />
+          <Property Name="TravelID" Type="nvarchar" MaxLength="100" />
+          <Property Name="ComeFrom" Type="nvarchar" MaxLength="100" />
+          <Property Name="ComeTo" Type="nvarchar" MaxLength="100" />
+          <Property Name="IsActive" Type="bit" />
+          <Property Name="IsDeleted" Type="bit" />
+          <Property Name="CreatedDate" Type="datetime" />
+          <Property Name="CreatedUserID" Type="int" />
+          <Property Name="LastUpdatedDate" Type="datetime" />
+          <Property Name="LastUpdatedUserID" Type="int" />
+        </EntityType>
+        <EntityType Name="G_AirLineCompany_User">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CompanyID" Type="int" />
+          <Property Name="G_UserID" Type="int" />
+          <Property Name="TravelID" Type="nvarchar" MaxLength="100" />
+          <Property Name="ComeFrom" Type="nvarchar" MaxLength="100" />
+          <Property Name="ComeTo" Type="nvarchar" MaxLength="100" />
+          <Property Name="IsActive" Type="bit" />
+          <Property Name="IsDeleted" Type="bit" />
+          <Property Name="CreatedDate" Type="datetime" />
+          <Property Name="CreatedUserID" Type="int" />
+          <Property Name="LastUpdatedDate" Type="datetime" />
+          <Property Name="LastUpdatedUserID" Type="int" />
+        </EntityType>
+        <EntityType Name="G_Companies">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="NameAr" Type="nvarchar" MaxLength="50" />
+          <Property Name="NameEn" Type="nvarchar" MaxLength="50" />
+          <Property Name="Code" Type="nvarchar" MaxLength="50" />
+          <Property Name="Email" Type="nvarchar" MaxLength="100" />
+          <Property Name="Tel" Type="nvarchar" MaxLength="100" />
+          <Property Name="Fax" Type="nvarchar" MaxLength="100" />
+          <Property Name="TypeID" Type="int" />
+          <Property Name="HamalaName" Type="nvarchar" MaxLength="100" />
+          <Property Name="IsActive" Type="bit" />
+          <Property Name="IsDeleted" Type="bit" />
+          <Property Name="CreatedDate" Type="datetime" />
+          <Property Name="CreatedUserID" Type="int" />
+          <Property Name="LastUpdatedDate" Type="datetime" />
+          <Property Name="LastUpdatedUserID" Type="int" />
+        </EntityType>
+        <EntityType Name="G_TawafCompany">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="NameAr" Type="nvarchar" MaxLength="50" />
+          <Property Name="NameEn" Type="nvarchar" MaxLength="50" />
+          <Property Name="Code" Type="nvarchar" MaxLength="50" />
+          <Property Name="Email" Type="nvarchar" MaxLength="100" />
+          <Property Name="Tel" Type="nvarchar" MaxLength="100" />
+          <Property Name="Fax" Type="nvarchar" MaxLength="100" />
+          <Property Name="TypeID" Type="int" />
+          <Property Name="CityID" Type="int" />
+          <Property Name="TasreehID" Type="nvarchar" MaxLength="100" />
+          <Property Name="HamlaID" Type="nvarchar" MaxLength="100" />
+          <Property Name="ComeFrom" Type="nvarchar" MaxLength="100" />
+          <Property Name="ComeTo" Type="nvarchar" MaxLength="100" />
+          <Property Name="IsActive" Type="bit" />
+          <Property Name="IsDeleted" Type="bit" />
+          <Property Name="CreatedDate" Type="datetime" />
+          <Property Name="CreatedUserID" Type="int" />
+          <Property Name="LastUpdatedDate" Type="datetime" />
+          <Property Name="LastUpdatedUserID" Type="int" />
+        </EntityType>
+        <EntityType Name="G_TawafCompany_User">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CompanyID" Type="int" />
+          <Property Name="G_UserID" Type="int" />
+          <Property Name="TasreehID" Type="nvarchar" MaxLength="100" />
+          <Property Name="HamlaID" Type="nvarchar" MaxLength="100" />
+          <Property Name="ComeFrom" Type="nvarchar" MaxLength="100" />
+          <Property Name="ComeTo" Type="nvarchar" MaxLength="100" />
+          <Property Name="IsActive" Type="bit" />
+          <Property Name="IsDeleted" Type="bit" />
+          <Property Name="CreatedDate" Type="datetime" />
+          <Property Name="CreatedUserID" Type="int" />
+          <Property Name="LastUpdatedDate" Type="datetime" />
+          <Property Name="LastUpdatedUserID" Type="int" />
+        </EntityType>
+        <EntityType Name="G_Users">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="NameAr" Type="nvarchar" MaxLength="100" />
+          <Property Name="NameEn" Type="nvarchar" MaxLength="100" />
+          <Property Name="PassportID" Type="nvarchar" MaxLength="50" />
+          <Property Name="BirthDate" Type="datetime" />
+          <Property Name="VisaNumber" Type="nvarchar" MaxLength="50" />
+          <Property Name="BarcodeIQ" Type="int" />
+          <Property Name="AirLinesCompanyID" Type="int" />
+          <Property Name="TawafaCompanyID" Type="int" />
+          <Property Name="Gender" Type="nchar" MaxLength="10" />
+          <Property Name="Photo" Type="nvarchar" MaxLength="200" />
+          <Property Name="TouchID" Type="nvarchar" MaxLength="200" />
+          <Property Name="PassportSource" Type="nvarchar" MaxLength="100" />
+          <Property Name="CountaryID" Type="int" />
+          <Property Name="LanguageID" Type="int" />
+          <Property Name="PortNumber" Type="nvarchar" MaxLength="50" />
+          <Property Name="VisaIssuance" Type="nvarchar" MaxLength="100" />
+          <Property Name="IsNedded" Type="bit" />
+          <Property Name="BlodGroup" Type="nchar" MaxLength="10" />
+          <Property Name="MobileNumber" Type="nvarchar" MaxLength="50" />
+          <Property Name="IdentityNumber" Type="nvarchar" MaxLength="50" />
+          <Property Name="TasreeeNumber" Type="nvarchar" MaxLength="100" />
+          <Property Name="Email" Type="nvarchar" MaxLength="50" />
+          <Property Name="UserName" Type="nvarchar" MaxLength="50" />
+          <Property Name="Password" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Sys_Area">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CityId" Type="int" Nullable="false" />
+          <Property Name="AreaNameAr" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="AreaNameEn" Type="nvarchar" MaxLength="50" />
+          <Property Name="MaxInArea" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Sys_ChekPoints">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="AreaID" Type="int" Nullable="false" />
+          <Property Name="RFIDDeviceID" Type="int" Nullable="false" />
+          <Property Name="chekpointNameAr" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="chekpointNameEn" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Sys_Cities">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="NameAr" Type="nvarchar" MaxLength="50" />
+          <Property Name="NameEn" Type="nvarchar" MaxLength="50" />
+          <Property Name="CountrayID" Type="int" />
+          <Property Name="Code" Type="nvarchar" MaxLength="50" />
+          <Property Name="IsActive" Type="bit" />
+          <Property Name="IsDeleted" Type="bit" />
+          <Property Name="CreatedDate" Type="datetime" />
+          <Property Name="CreatedUserID" Type="int" />
+          <Property Name="LastUpdatedDate" Type="datetime" />
+          <Property Name="LastUpdatedUserID" Type="int" />
+        </EntityType>
+        <EntityType Name="Sys_Countaries">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="NameAr" Type="nvarchar" MaxLength="50" />
+          <Property Name="NameEn" Type="nvarchar" MaxLength="50" />
+          <Property Name="Code" Type="nvarchar" MaxLength="50" />
+          <Property Name="IsActive" Type="bit" />
+          <Property Name="IsDeleted" Type="bit" />
+          <Property Name="CreatedDate" Type="datetime" />
+          <Property Name="CreatedUserID" Type="int" />
+          <Property Name="LastUpdatedDate" Type="datetime" />
+          <Property Name="LastUpdatedUserID" Type="int" />
+        </EntityType>
+        <EntityType Name="Sys_Languages">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="NameAr" Type="nvarchar" MaxLength="50" />
+          <Property Name="NameEn" Type="nvarchar" MaxLength="50" />
+          <Property Name="Code" Type="nvarchar" MaxLength="50" />
+          <Property Name="IsActive" Type="bit" />
+          <Property Name="IsDeleted" Type="bit" />
+          <Property Name="CreatedDate" Type="datetime" />
+          <Property Name="CreatedUserID" Type="int" />
+          <Property Name="LastUpdatedDate" Type="datetime" />
+          <Property Name="LastUpdatedUserID" Type="int" />
+        </EntityType>
+        <EntityType Name="Sys_Menues">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="NameAr" Type="nvarchar" MaxLength="100" />
+          <Property Name="NameEn" Type="nvarchar" MaxLength="100" />
+          <Property Name="Action" Type="nvarchar" MaxLength="100" />
+          <Property Name="Controller" Type="nvarchar" MaxLength="100" />
+          <Property Name="Area" Type="nvarchar" MaxLength="100" />
+          <Property Name="Description" Type="nvarchar" MaxLength="100" />
+          <Property Name="IsActive" Type="bit" />
+          <Property Name="Regdate" Type="smalldatetime" />
+          <Property Name="ReguserID" Type="int" />
+          <Property Name="ParentID" Type="int" />
+        </EntityType>
+        <EntityType Name="Sys_Roles">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="NameAr" Type="nvarchar" MaxLength="50" />
+          <Property Name="NameEn" Type="nvarchar" MaxLength="50" />
+          <Property Name="Code" Type="nvarchar" MaxLength="50" />
+          <Property Name="IsActive" Type="bit" />
+          <Property Name="IsDeleted" Type="bit" />
+          <Property Name="CreatedDate" Type="datetime" />
+          <Property Name="CreatedUserID" Type="int" />
+          <Property Name="LastUpdatedDate" Type="datetime" />
+          <Property Name="LastUpdatedUserID" Type="int" />
+        </EntityType>
+        <EntityType Name="Sys_Types">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="NameAr" Type="nvarchar" MaxLength="50" />
+          <Property Name="NameEn" Type="nvarchar" MaxLength="50" />
+          <Property Name="Code" Type="nvarchar" MaxLength="50" />
+          <Property Name="IsActive" Type="bit" />
+          <Property Name="IsDeleted" Type="bit" />
+          <Property Name="CreatedDate" Type="datetime" />
+          <Property Name="CreatedUserID" Type="int" />
+          <Property Name="LastUpdatedDate" Type="datetime" />
+          <Property Name="LastUpdatedUserID" Type="int" />
+        </EntityType>
+        <EntityType Name="Sys_Users">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="NameAr" Type="nvarchar" MaxLength="100" />
+          <Property Name="NameEn" Type="nvarchar" MaxLength="100" />
+          <Property Name="BirthDate" Type="datetime" />
+          <Property Name="Gender" Type="nchar" MaxLength="10" />
+          <Property Name="CountaryID" Type="int" />
+          <Property Name="MobileNumber" Type="nvarchar" MaxLength="50" />
+          <Property Name="IdentityNumber" Type="nvarchar" MaxLength="50" />
+          <Property Name="Email" Type="nvarchar" MaxLength="50" />
+          <Property Name="UsrName" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Password" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Passport" Type="nvarchar" MaxLength="50" />
+          <Property Name="IsActive" Type="bit" />
+          <Property Name="IsDeleted" Type="bit" />
+          <Property Name="CreatedDate" Type="datetime" />
+          <Property Name="CreatedUserID" Type="int" />
+          <Property Name="LastUpdatedDate" Type="datetime" />
+          <Property Name="LastUpdatedUserID" Type="int" />
+        </EntityType>
+        <EntityType Name="Sys_UsersAndRoles">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="RoleID" Type="int" />
+          <Property Name="MenueID" Type="int" />
+          <Property Name="Description" Type="nvarchar" MaxLength="100" />
+          <Property Name="IsActive" Type="bit" />
+          <Property Name="Regdate" Type="smalldatetime" />
+          <Property Name="CreatedDate" Type="datetime" />
+          <Property Name="CreatedUserID" Type="int" />
+          <Property Name="LastUpdatedDate" Type="datetime" />
+          <Property Name="LastUpdateUserID" Type="int" />
+        </EntityType>
+        <EntityType Name="Sys_Zone">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="AreaID" Type="int" />
+          <Property Name="InDeviceID" Type="int" />
+          <Property Name="OutDeviceID" Type="int" />
+          <Property Name="MaxCount" Type="int" />
+        </EntityType>
+        <EntityType Name="TagEvents">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="UtcTimestamp" Type="datetime" Nullable="false" />
+          <Property Name="TagEventId" Type="tinyint" Nullable="false" />
+          <Property Name="ChannelId" Type="int" Nullable="false" />
+          <Property Name="DeviceId" Type="int" />
+          <Property Name="AntennaId" Type="int" />
+          <Property Name="ManufacturerId" Type="int" />
+          <Property Name="ModelId" Type="int" />
+          <Property Name="EPCId" Type="int" Nullable="false" />
+          <Property Name="SerialNumberId" Type="int" />
+          <Property Name="UserMemoryId" Type="int" />
+          <Property Name="DecodeAlgorithmId" Type="int" />
+          <Property Name="DecodedEPCId" Type="int" />
+          <Property Name="DecodedUserMemoryId" Type="int" />
+          <Property Name="DeviceLocationId" Type="int" />
+          <Property Name="AntennaLocationId" Type="int" />
+        </EntityType>
+        <Association Name="FK_G_AirLineCompany_Sys_Types">
+          <End Role="Sys_Types" Type="Self.Sys_Types" Multiplicity="0..1" />
+          <End Role="G_AirLineCompany" Type="Self.G_AirLineCompany" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Sys_Types">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="G_AirLineCompany">
+              <PropertyRef Name="TypeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_G_AirLineCompany_User_G_AirLineCompany">
+          <End Role="G_AirLineCompany" Type="Self.G_AirLineCompany" Multiplicity="0..1" />
+          <End Role="G_AirLineCompany_User" Type="Self.G_AirLineCompany_User" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="G_AirLineCompany">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="G_AirLineCompany_User">
+              <PropertyRef Name="CompanyID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_G_AirLineCompany_User_G_Users">
+          <End Role="G_Users" Type="Self.G_Users" Multiplicity="0..1" />
+          <End Role="G_AirLineCompany_User" Type="Self.G_AirLineCompany_User" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="G_Users">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="G_AirLineCompany_User">
+              <PropertyRef Name="G_UserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_G_Companies_Sys_Types">
+          <End Role="Sys_Types" Type="Self.Sys_Types" Multiplicity="0..1" />
+          <End Role="G_Companies" Type="Self.G_Companies" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Sys_Types">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="G_Companies">
+              <PropertyRef Name="TypeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_G_TawafCompany_Sys_Cities">
+          <End Role="Sys_Cities" Type="Self.Sys_Cities" Multiplicity="0..1" />
+          <End Role="G_TawafCompany" Type="Self.G_TawafCompany" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Sys_Cities">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="G_TawafCompany">
+              <PropertyRef Name="CityID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_G_TawafCompany_Sys_Types">
+          <End Role="Sys_Types" Type="Self.Sys_Types" Multiplicity="0..1" />
+          <End Role="G_TawafCompany" Type="Self.G_TawafCompany" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Sys_Types">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="G_TawafCompany">
+              <PropertyRef Name="TypeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_G_TawafCompany_User_G_TawafCompany">
+          <End Role="G_TawafCompany" Type="Self.G_TawafCompany" Multiplicity="0..1" />
+          <End Role="G_TawafCompany_User" Type="Self.G_TawafCompany_User" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="G_TawafCompany">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="G_TawafCompany_User">
+              <PropertyRef Name="CompanyID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_G_TawafCompany_User_G_Users">
+          <End Role="G_Users" Type="Self.G_Users" Multiplicity="0..1" />
+          <End Role="G_TawafCompany_User" Type="Self.G_TawafCompany_User" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="G_Users">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="G_TawafCompany_User">
+              <PropertyRef Name="G_UserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_G_Users_EPCs">
+          <End Role="EPCs" Type="Self.EPCs" Multiplicity="0..1" />
+          <End Role="G_Users" Type="Self.G_Users" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EPCs">
+              <PropertyRef Name="EPCId" />
+            </Principal>
+            <Dependent Role="G_Users">
+              <PropertyRef Name="BarcodeIQ" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_G_Users_Sys_Countaries">
+          <End Role="Sys_Countaries" Type="Self.Sys_Countaries" Multiplicity="0..1" />
+          <End Role="G_Users" Type="Self.G_Users" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Sys_Countaries">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="G_Users">
+              <PropertyRef Name="CountaryID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_G_Users_Sys_Languages">
+          <End Role="Sys_Languages" Type="Self.Sys_Languages" Multiplicity="1" />
+          <End Role="G_Users" Type="Self.G_Users" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="Sys_Languages">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="G_Users">
+              <PropertyRef Name="ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Sys_Area_Sys_Cities">
+          <End Role="Sys_Cities" Type="Self.Sys_Cities" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Sys_Area" Type="Self.Sys_Area" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Sys_Cities">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Sys_Area">
+              <PropertyRef Name="CityId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Sys_ChekPoints_Sys_Area">
+          <End Role="Sys_Area" Type="Self.Sys_Area" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Sys_ChekPoints" Type="Self.Sys_ChekPoints" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Sys_Area">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Sys_ChekPoints">
+              <PropertyRef Name="AreaID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Sys_ChekPoints_Sys_ChekPoints">
+          <End Role="Devices" Type="Self.Devices" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Sys_ChekPoints" Type="Self.Sys_ChekPoints" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Devices">
+              <PropertyRef Name="DeviceId" />
+            </Principal>
+            <Dependent Role="Sys_ChekPoints">
+              <PropertyRef Name="RFIDDeviceID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Sys_Cities_Sys_Countaries">
+          <End Role="Sys_Countaries" Type="Self.Sys_Countaries" Multiplicity="0..1" />
+          <End Role="Sys_Cities" Type="Self.Sys_Cities" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Sys_Countaries">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Sys_Cities">
+              <PropertyRef Name="CountrayID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Sys_UsersAndRoles_Sys_Menues">
+          <End Role="Sys_Menues" Type="Self.Sys_Menues" Multiplicity="0..1" />
+          <End Role="Sys_UsersAndRoles" Type="Self.Sys_UsersAndRoles" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Sys_Menues">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Sys_UsersAndRoles">
+              <PropertyRef Name="RoleID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Sys_UsersAndRoles_Sys_Roles">
+          <End Role="Sys_Roles" Type="Self.Sys_Roles" Multiplicity="0..1" />
+          <End Role="Sys_UsersAndRoles" Type="Self.Sys_UsersAndRoles" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Sys_Roles">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Sys_UsersAndRoles">
+              <PropertyRef Name="RoleID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Sys_Zone_Devices">
+          <End Role="Devices" Type="Self.Devices" Multiplicity="0..1" />
+          <End Role="Sys_Zone" Type="Self.Sys_Zone" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Devices">
+              <PropertyRef Name="DeviceId" />
+            </Principal>
+            <Dependent Role="Sys_Zone">
+              <PropertyRef Name="InDeviceID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Sys_Zone_Devices1">
+          <End Role="Devices" Type="Self.Devices" Multiplicity="0..1" />
+          <End Role="Sys_Zone" Type="Self.Sys_Zone" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Devices">
+              <PropertyRef Name="DeviceId" />
+            </Principal>
+            <Dependent Role="Sys_Zone">
+              <PropertyRef Name="OutDeviceID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Sys_Zone_Sys_Area">
+          <End Role="Sys_Area" Type="Self.Sys_Area" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Sys_Zone" Type="Self.Sys_Zone" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Sys_Area">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Sys_Zone">
+              <PropertyRef Name="AreaID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TagEvents_Devices">
+          <End Role="Devices" Type="Self.Devices" Multiplicity="0..1" />
+          <End Role="TagEvents" Type="Self.TagEvents" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Devices">
+              <PropertyRef Name="DeviceId" />
+            </Principal>
+            <Dependent Role="TagEvents">
+              <PropertyRef Name="DeviceId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TagEvents_EPCs">
+          <End Role="EPCs" Type="Self.EPCs" Multiplicity="1" />
+          <End Role="TagEvents" Type="Self.TagEvents" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EPCs">
+              <PropertyRef Name="EPCId" />
+            </Principal>
+            <Dependent Role="TagEvents">
+              <PropertyRef Name="EPCId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="LabickModelStoreContainer">
+          <EntitySet Name="Devices" EntityType="Self.Devices" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="EPCs" EntityType="Self.EPCs" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="G_AirLineCompany" EntityType="Self.G_AirLineCompany" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="G_AirLineCompany_User" EntityType="Self.G_AirLineCompany_User" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="G_Companies" EntityType="Self.G_Companies" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="G_TawafCompany" EntityType="Self.G_TawafCompany" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="G_TawafCompany_User" EntityType="Self.G_TawafCompany_User" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="G_Users" EntityType="Self.G_Users" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Sys_Area" EntityType="Self.Sys_Area" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Sys_ChekPoints" EntityType="Self.Sys_ChekPoints" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Sys_Cities" EntityType="Self.Sys_Cities" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Sys_Countaries" EntityType="Self.Sys_Countaries" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Sys_Languages" EntityType="Self.Sys_Languages" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Sys_Menues" EntityType="Self.Sys_Menues" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Sys_Roles" EntityType="Self.Sys_Roles" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Sys_Types" EntityType="Self.Sys_Types" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Sys_Users" EntityType="Self.Sys_Users" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Sys_UsersAndRoles" EntityType="Self.Sys_UsersAndRoles" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Sys_Zone" EntityType="Self.Sys_Zone" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TagEvents" EntityType="Self.TagEvents" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_G_AirLineCompany_Sys_Types" Association="Self.FK_G_AirLineCompany_Sys_Types">
+            <End Role="Sys_Types" EntitySet="Sys_Types" />
+            <End Role="G_AirLineCompany" EntitySet="G_AirLineCompany" />
+          </AssociationSet>
+          <AssociationSet Name="FK_G_AirLineCompany_User_G_AirLineCompany" Association="Self.FK_G_AirLineCompany_User_G_AirLineCompany">
+            <End Role="G_AirLineCompany" EntitySet="G_AirLineCompany" />
+            <End Role="G_AirLineCompany_User" EntitySet="G_AirLineCompany_User" />
+          </AssociationSet>
+          <AssociationSet Name="FK_G_AirLineCompany_User_G_Users" Association="Self.FK_G_AirLineCompany_User_G_Users">
+            <End Role="G_Users" EntitySet="G_Users" />
+            <End Role="G_AirLineCompany_User" EntitySet="G_AirLineCompany_User" />
+          </AssociationSet>
+          <AssociationSet Name="FK_G_Companies_Sys_Types" Association="Self.FK_G_Companies_Sys_Types">
+            <End Role="Sys_Types" EntitySet="Sys_Types" />
+            <End Role="G_Companies" EntitySet="G_Companies" />
+          </AssociationSet>
+          <AssociationSet Name="FK_G_TawafCompany_Sys_Cities" Association="Self.FK_G_TawafCompany_Sys_Cities">
+            <End Role="Sys_Cities" EntitySet="Sys_Cities" />
+            <End Role="G_TawafCompany" EntitySet="G_TawafCompany" />
+          </AssociationSet>
+          <AssociationSet Name="FK_G_TawafCompany_Sys_Types" Association="Self.FK_G_TawafCompany_Sys_Types">
+            <End Role="Sys_Types" EntitySet="Sys_Types" />
+            <End Role="G_TawafCompany" EntitySet="G_TawafCompany" />
+          </AssociationSet>
+          <AssociationSet Name="FK_G_TawafCompany_User_G_TawafCompany" Association="Self.FK_G_TawafCompany_User_G_TawafCompany">
+            <End Role="G_TawafCompany" EntitySet="G_TawafCompany" />
+            <End Role="G_TawafCompany_User" EntitySet="G_TawafCompany_User" />
+          </AssociationSet>
+          <AssociationSet Name="FK_G_TawafCompany_User_G_Users" Association="Self.FK_G_TawafCompany_User_G_Users">
+            <End Role="G_Users" EntitySet="G_Users" />
+            <End Role="G_TawafCompany_User" EntitySet="G_TawafCompany_User" />
+          </AssociationSet>
+          <AssociationSet Name="FK_G_Users_EPCs" Association="Self.FK_G_Users_EPCs">
+            <End Role="EPCs" EntitySet="EPCs" />
+            <End Role="G_Users" EntitySet="G_Users" />
+          </AssociationSet>
+          <AssociationSet Name="FK_G_Users_Sys_Countaries" Association="Self.FK_G_Users_Sys_Countaries">
+            <End Role="Sys_Countaries" EntitySet="Sys_Countaries" />
+            <End Role="G_Users" EntitySet="G_Users" />
+          </AssociationSet>
+          <AssociationSet Name="FK_G_Users_Sys_Languages" Association="Self.FK_G_Users_Sys_Languages">
+            <End Role="Sys_Languages" EntitySet="Sys_Languages" />
+            <End Role="G_Users" EntitySet="G_Users" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Sys_Area_Sys_Cities" Association="Self.FK_Sys_Area_Sys_Cities">
+            <End Role="Sys_Cities" EntitySet="Sys_Cities" />
+            <End Role="Sys_Area" EntitySet="Sys_Area" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Sys_ChekPoints_Sys_Area" Association="Self.FK_Sys_ChekPoints_Sys_Area">
+            <End Role="Sys_Area" EntitySet="Sys_Area" />
+            <End Role="Sys_ChekPoints" EntitySet="Sys_ChekPoints" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Sys_ChekPoints_Sys_ChekPoints" Association="Self.FK_Sys_ChekPoints_Sys_ChekPoints">
+            <End Role="Devices" EntitySet="Devices" />
+            <End Role="Sys_ChekPoints" EntitySet="Sys_ChekPoints" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Sys_Cities_Sys_Countaries" Association="Self.FK_Sys_Cities_Sys_Countaries">
+            <End Role="Sys_Countaries" EntitySet="Sys_Countaries" />
+            <End Role="Sys_Cities" EntitySet="Sys_Cities" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Sys_UsersAndRoles_Sys_Menues" Association="Self.FK_Sys_UsersAndRoles_Sys_Menues">
+            <End Role="Sys_Menues" EntitySet="Sys_Menues" />
+            <End Role="Sys_UsersAndRoles" EntitySet="Sys_UsersAndRoles" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Sys_UsersAndRoles_Sys_Roles" Association="Self.FK_Sys_UsersAndRoles_Sys_Roles">
+            <End Role="Sys_Roles" EntitySet="Sys_Roles" />
+            <End Role="Sys_UsersAndRoles" EntitySet="Sys_UsersAndRoles" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Sys_Zone_Devices" Association="Self.FK_Sys_Zone_Devices">
+            <End Role="Devices" EntitySet="Devices" />
+            <End Role="Sys_Zone" EntitySet="Sys_Zone" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Sys_Zone_Devices1" Association="Self.FK_Sys_Zone_Devices1">
+            <End Role="Devices" EntitySet="Devices" />
+            <End Role="Sys_Zone" EntitySet="Sys_Zone" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Sys_Zone_Sys_Area" Association="Self.FK_Sys_Zone_Sys_Area">
+            <End Role="Sys_Area" EntitySet="Sys_Area" />
+            <End Role="Sys_Zone" EntitySet="Sys_Zone" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TagEvents_Devices" Association="Self.FK_TagEvents_Devices">
+            <End Role="Devices" EntitySet="Devices" />
+            <End Role="TagEvents" EntitySet="TagEvents" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TagEvents_EPCs" Association="Self.FK_TagEvents_EPCs">
+            <End Role="EPCs" EntitySet="EPCs" />
+            <End Role="TagEvents" EntitySet="TagEvents" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="LabickModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="G_AirLineCompany">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NameAr" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="NameEn" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Code" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Email" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Tel" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Fax" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="TypeID" Type="Int32" />
+          <Property Name="TravelID" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="ComeFrom" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="ComeTo" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="IsActive" Type="Boolean" />
+          <Property Name="IsDeleted" Type="Boolean" />
+          <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+          <Property Name="CreatedUserID" Type="Int32" />
+          <Property Name="LastUpdatedDate" Type="DateTime" Precision="3" />
+          <Property Name="LastUpdatedUserID" Type="Int32" />
+          <NavigationProperty Name="Sys_Types" Relationship="Self.FK_G_AirLineCompany_Sys_Types" FromRole="G_AirLineCompany" ToRole="Sys_Types" />
+          <NavigationProperty Name="G_AirLineCompany_User" Relationship="Self.FK_G_AirLineCompany_User_G_AirLineCompany" FromRole="G_AirLineCompany" ToRole="G_AirLineCompany_User" />
+        </EntityType>
+        <EntityType Name="G_Companies">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NameAr" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="NameEn" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Code" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Email" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Tel" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Fax" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="TypeID" Type="Int32" />
+          <Property Name="HamalaName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="IsActive" Type="Boolean" />
+          <Property Name="IsDeleted" Type="Boolean" />
+          <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+          <Property Name="CreatedUserID" Type="Int32" />
+          <Property Name="LastUpdatedDate" Type="DateTime" Precision="3" />
+          <Property Name="LastUpdatedUserID" Type="Int32" />
+          <NavigationProperty Name="Sys_Types" Relationship="Self.FK_G_Companies_Sys_Types" FromRole="G_Companies" ToRole="Sys_Types" />
+        </EntityType>
+        <EntityType Name="G_TawafCompany">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NameAr" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="NameEn" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Code" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Email" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Tel" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Fax" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="TypeID" Type="Int32" />
+          <Property Name="CityID" Type="Int32" />
+          <Property Name="TasreehID" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="HamlaID" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="ComeFrom" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="ComeTo" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="IsActive" Type="Boolean" />
+          <Property Name="IsDeleted" Type="Boolean" />
+          <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+          <Property Name="CreatedUserID" Type="Int32" />
+          <Property Name="LastUpdatedDate" Type="DateTime" Precision="3" />
+          <Property Name="LastUpdatedUserID" Type="Int32" />
+          <NavigationProperty Name="Sys_Cities" Relationship="Self.FK_G_TawafCompany_Sys_Cities" FromRole="G_TawafCompany" ToRole="Sys_Cities" />
+          <NavigationProperty Name="Sys_Types" Relationship="Self.FK_G_TawafCompany_Sys_Types" FromRole="G_TawafCompany" ToRole="Sys_Types" />
+          <NavigationProperty Name="G_TawafCompany_User" Relationship="Self.FK_G_TawafCompany_User_G_TawafCompany" FromRole="G_TawafCompany" ToRole="G_TawafCompany_User" />
+        </EntityType>
+        <EntityType Name="G_TawafCompany_User">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CompanyID" Type="Int32" />
+          <Property Name="G_UserID" Type="Int32" />
+          <Property Name="TasreehID" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="HamlaID" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="ComeFrom" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="ComeTo" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="IsActive" Type="Boolean" />
+          <Property Name="IsDeleted" Type="Boolean" />
+          <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+          <Property Name="CreatedUserID" Type="Int32" />
+          <Property Name="LastUpdatedDate" Type="DateTime" Precision="3" />
+          <Property Name="LastUpdatedUserID" Type="Int32" />
+          <NavigationProperty Name="G_TawafCompany" Relationship="Self.FK_G_TawafCompany_User_G_TawafCompany" FromRole="G_TawafCompany_User" ToRole="G_TawafCompany" />
+          <NavigationProperty Name="G_Users" Relationship="LabickModel.FK_G_TawafCompany_User_G_Users" FromRole="G_TawafCompany_User" ToRole="G_Users" />
+        </EntityType>
+        <EntityType Name="Sys_Cities">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NameAr" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="NameEn" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="CountrayID" Type="Int32" />
+          <Property Name="Code" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="IsActive" Type="Boolean" />
+          <Property Name="IsDeleted" Type="Boolean" />
+          <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+          <Property Name="CreatedUserID" Type="Int32" />
+          <Property Name="LastUpdatedDate" Type="DateTime" Precision="3" />
+          <Property Name="LastUpdatedUserID" Type="Int32" />
+          <NavigationProperty Name="G_TawafCompany" Relationship="Self.FK_G_TawafCompany_Sys_Cities" FromRole="Sys_Cities" ToRole="G_TawafCompany" />
+          <NavigationProperty Name="Sys_Countaries" Relationship="Self.FK_Sys_Cities_Sys_Countaries" FromRole="Sys_Cities" ToRole="Sys_Countaries" />
+          <NavigationProperty Name="Sys_Area" Relationship="LabickModel.FK_Sys_Area_Sys_Cities" FromRole="Sys_Cities" ToRole="Sys_Area" />
+        </EntityType>
+        <EntityType Name="Sys_Countaries">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NameAr" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="NameEn" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Code" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="IsActive" Type="Boolean" />
+          <Property Name="IsDeleted" Type="Boolean" />
+          <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+          <Property Name="CreatedUserID" Type="Int32" />
+          <Property Name="LastUpdatedDate" Type="DateTime" Precision="3" />
+          <Property Name="LastUpdatedUserID" Type="Int32" />
+          <NavigationProperty Name="Sys_Cities" Relationship="Self.FK_Sys_Cities_Sys_Countaries" FromRole="Sys_Countaries" ToRole="Sys_Cities" />
+          <NavigationProperty Name="G_Users" Relationship="LabickModel.FK_G_Users_Sys_Countaries" FromRole="Sys_Countaries" ToRole="G_Users" />
+        </EntityType>
+        <EntityType Name="Sys_Languages">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NameAr" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="NameEn" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Code" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="IsActive" Type="Boolean" />
+          <Property Name="IsDeleted" Type="Boolean" />
+          <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+          <Property Name="CreatedUserID" Type="Int32" />
+          <Property Name="LastUpdatedDate" Type="DateTime" Precision="3" />
+          <Property Name="LastUpdatedUserID" Type="Int32" />
+          <NavigationProperty Name="G_Users" Relationship="LabickModel.FK_G_Users_Sys_Languages" FromRole="Sys_Languages" ToRole="G_Users" />
+        </EntityType>
+        <EntityType Name="Sys_Menues">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NameAr" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="NameEn" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Action" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Controller" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Area" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Description" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="IsActive" Type="Boolean" />
+          <Property Name="Regdate" Type="DateTime" Precision="0" />
+          <Property Name="ReguserID" Type="Int32" />
+          <Property Name="ParentID" Type="Int32" />
+          <NavigationProperty Name="Sys_UsersAndRoles" Relationship="Self.FK_Sys_UsersAndRoles_Sys_Menues" FromRole="Sys_Menues" ToRole="Sys_UsersAndRoles" />
+        </EntityType>
+        <EntityType Name="Sys_Roles">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NameAr" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="NameEn" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Code" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="IsActive" Type="Boolean" />
+          <Property Name="IsDeleted" Type="Boolean" />
+          <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+          <Property Name="CreatedUserID" Type="Int32" />
+          <Property Name="LastUpdatedDate" Type="DateTime" Precision="3" />
+          <Property Name="LastUpdatedUserID" Type="Int32" />
+          <NavigationProperty Name="Sys_UsersAndRoles" Relationship="Self.FK_Sys_UsersAndRoles_Sys_Roles" FromRole="Sys_Roles" ToRole="Sys_UsersAndRoles" />
+        </EntityType>
+        <EntityType Name="Sys_Types">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NameAr" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="NameEn" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Code" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="IsActive" Type="Boolean" />
+          <Property Name="IsDeleted" Type="Boolean" />
+          <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+          <Property Name="CreatedUserID" Type="Int32" />
+          <Property Name="LastUpdatedDate" Type="DateTime" Precision="3" />
+          <Property Name="LastUpdatedUserID" Type="Int32" />
+          <NavigationProperty Name="G_AirLineCompany" Relationship="Self.FK_G_AirLineCompany_Sys_Types" FromRole="Sys_Types" ToRole="G_AirLineCompany" />
+          <NavigationProperty Name="G_Companies" Relationship="Self.FK_G_Companies_Sys_Types" FromRole="Sys_Types" ToRole="G_Companies" />
+          <NavigationProperty Name="G_TawafCompany" Relationship="Self.FK_G_TawafCompany_Sys_Types" FromRole="Sys_Types" ToRole="G_TawafCompany" />
+        </EntityType>
+        <EntityType Name="Sys_Users">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NameAr" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="NameEn" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="BirthDate" Type="DateTime" Precision="3" />
+          <Property Name="Gender" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="CountaryID" Type="Int32" />
+          <Property Name="MobileNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="IdentityNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Passport" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="IsActive" Type="Boolean" />
+          <Property Name="IsDeleted" Type="Boolean" />
+          <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+          <Property Name="CreatedUserID" Type="Int32" />
+          <Property Name="LastUpdatedDate" Type="DateTime" Precision="3" />
+          <Property Name="LastUpdatedUserID" Type="Int32" />
+          <Property Name="UsrName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Password" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Sys_UsersAndRoles">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="RoleID" Type="Int32" />
+          <Property Name="MenueID" Type="Int32" />
+          <Property Name="Description" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="IsActive" Type="Boolean" />
+          <Property Name="Regdate" Type="DateTime" Precision="0" />
+          <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+          <Property Name="CreatedUserID" Type="Int32" />
+          <Property Name="LastUpdatedDate" Type="DateTime" Precision="3" />
+          <Property Name="LastUpdateUserID" Type="Int32" />
+          <NavigationProperty Name="Sys_Menues" Relationship="Self.FK_Sys_UsersAndRoles_Sys_Menues" FromRole="Sys_UsersAndRoles" ToRole="Sys_Menues" />
+          <NavigationProperty Name="Sys_Roles" Relationship="Self.FK_Sys_UsersAndRoles_Sys_Roles" FromRole="Sys_UsersAndRoles" ToRole="Sys_Roles" />
+        </EntityType>
+        <EntityType Name="G_AirLineCompany_User">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CompanyID" Type="Int32" />
+          <Property Name="G_UserID" Type="Int32" />
+          <Property Name="TravelID" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="ComeFrom" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="ComeTo" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="IsActive" Type="Boolean" />
+          <Property Name="IsDeleted" Type="Boolean" />
+          <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+          <Property Name="CreatedUserID" Type="Int32" />
+          <Property Name="LastUpdatedDate" Type="DateTime" Precision="3" />
+          <Property Name="LastUpdatedUserID" Type="Int32" />
+          <NavigationProperty Name="G_AirLineCompany" Relationship="Self.FK_G_AirLineCompany_User_G_AirLineCompany" FromRole="G_AirLineCompany_User" ToRole="G_AirLineCompany" />
+          <NavigationProperty Name="G_Users" Relationship="LabickModel.FK_G_AirLineCompany_User_G_Users" FromRole="G_AirLineCompany_User" ToRole="G_Users" />
+        </EntityType>
+        <Association Name="FK_G_AirLineCompany_Sys_Types">
+          <End Role="Sys_Types" Type="Self.Sys_Types" Multiplicity="0..1" />
+          <End Role="G_AirLineCompany" Type="Self.G_AirLineCompany" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Sys_Types">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="G_AirLineCompany">
+              <PropertyRef Name="TypeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_G_AirLineCompany_User_G_AirLineCompany">
+          <End Role="G_AirLineCompany" Type="Self.G_AirLineCompany" Multiplicity="0..1" />
+          <End Role="G_AirLineCompany_User" Type="Self.G_AirLineCompany_User" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="G_AirLineCompany">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="G_AirLineCompany_User">
+              <PropertyRef Name="CompanyID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_G_Companies_Sys_Types">
+          <End Role="Sys_Types" Type="Self.Sys_Types" Multiplicity="0..1" />
+          <End Role="G_Companies" Type="Self.G_Companies" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Sys_Types">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="G_Companies">
+              <PropertyRef Name="TypeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_G_TawafCompany_Sys_Cities">
+          <End Role="Sys_Cities" Type="Self.Sys_Cities" Multiplicity="0..1" />
+          <End Role="G_TawafCompany" Type="Self.G_TawafCompany" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Sys_Cities">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="G_TawafCompany">
+              <PropertyRef Name="CityID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_G_TawafCompany_Sys_Types">
+          <End Role="Sys_Types" Type="Self.Sys_Types" Multiplicity="0..1" />
+          <End Role="G_TawafCompany" Type="Self.G_TawafCompany" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Sys_Types">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="G_TawafCompany">
+              <PropertyRef Name="TypeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_G_TawafCompany_User_G_TawafCompany">
+          <End Role="G_TawafCompany" Type="Self.G_TawafCompany" Multiplicity="0..1" />
+          <End Role="G_TawafCompany_User" Type="Self.G_TawafCompany_User" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="G_TawafCompany">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="G_TawafCompany_User">
+              <PropertyRef Name="CompanyID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Sys_Cities_Sys_Countaries">
+          <End Role="Sys_Countaries" Type="Self.Sys_Countaries" Multiplicity="0..1" />
+          <End Role="Sys_Cities" Type="Self.Sys_Cities" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Sys_Countaries">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Sys_Cities">
+              <PropertyRef Name="CountrayID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Sys_UsersAndRoles_Sys_Menues">
+          <End Role="Sys_Menues" Type="Self.Sys_Menues" Multiplicity="0..1" />
+          <End Role="Sys_UsersAndRoles" Type="Self.Sys_UsersAndRoles" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Sys_Menues">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Sys_UsersAndRoles">
+              <PropertyRef Name="RoleID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Sys_UsersAndRoles_Sys_Roles">
+          <End Role="Sys_Roles" Type="Self.Sys_Roles" Multiplicity="0..1" />
+          <End Role="Sys_UsersAndRoles" Type="Self.Sys_UsersAndRoles" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Sys_Roles">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Sys_UsersAndRoles">
+              <PropertyRef Name="RoleID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="LabickEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="G_AirLineCompany" EntityType="Self.G_AirLineCompany" />
+          <EntitySet Name="G_Companies" EntityType="Self.G_Companies" />
+          <EntitySet Name="G_TawafCompany" EntityType="Self.G_TawafCompany" />
+          <EntitySet Name="G_TawafCompany_User" EntityType="Self.G_TawafCompany_User" />
+          <EntitySet Name="Sys_Cities" EntityType="Self.Sys_Cities" />
+          <EntitySet Name="Sys_Countaries" EntityType="Self.Sys_Countaries" />
+          <EntitySet Name="Sys_Languages" EntityType="Self.Sys_Languages" />
+          <EntitySet Name="Sys_Menues" EntityType="Self.Sys_Menues" />
+          <EntitySet Name="Sys_Roles" EntityType="Self.Sys_Roles" />
+          <EntitySet Name="Sys_Types" EntityType="Self.Sys_Types" />
+          <EntitySet Name="Sys_Users" EntityType="Self.Sys_Users" />
+          <EntitySet Name="Sys_UsersAndRoles" EntityType="Self.Sys_UsersAndRoles" />
+          <EntitySet Name="G_AirLineCompany_User" EntityType="Self.G_AirLineCompany_User" />
+          <AssociationSet Name="FK_G_AirLineCompany_Sys_Types" Association="Self.FK_G_AirLineCompany_Sys_Types">
+            <End Role="Sys_Types" EntitySet="Sys_Types" />
+            <End Role="G_AirLineCompany" EntitySet="G_AirLineCompany" />
+          </AssociationSet>
+          <AssociationSet Name="FK_G_AirLineCompany_User_G_AirLineCompany" Association="Self.FK_G_AirLineCompany_User_G_AirLineCompany">
+            <End Role="G_AirLineCompany" EntitySet="G_AirLineCompany" />
+            <End Role="G_AirLineCompany_User" EntitySet="G_AirLineCompany_User" />
+          </AssociationSet>
+          <AssociationSet Name="FK_G_Companies_Sys_Types" Association="Self.FK_G_Companies_Sys_Types">
+            <End Role="Sys_Types" EntitySet="Sys_Types" />
+            <End Role="G_Companies" EntitySet="G_Companies" />
+          </AssociationSet>
+          <AssociationSet Name="FK_G_TawafCompany_Sys_Cities" Association="Self.FK_G_TawafCompany_Sys_Cities">
+            <End Role="Sys_Cities" EntitySet="Sys_Cities" />
+            <End Role="G_TawafCompany" EntitySet="G_TawafCompany" />
+          </AssociationSet>
+          <AssociationSet Name="FK_G_TawafCompany_Sys_Types" Association="Self.FK_G_TawafCompany_Sys_Types">
+            <End Role="Sys_Types" EntitySet="Sys_Types" />
+            <End Role="G_TawafCompany" EntitySet="G_TawafCompany" />
+          </AssociationSet>
+          <AssociationSet Name="FK_G_TawafCompany_User_G_TawafCompany" Association="Self.FK_G_TawafCompany_User_G_TawafCompany">
+            <End Role="G_TawafCompany" EntitySet="G_TawafCompany" />
+            <End Role="G_TawafCompany_User" EntitySet="G_TawafCompany_User" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Sys_Cities_Sys_Countaries" Association="Self.FK_Sys_Cities_Sys_Countaries">
+            <End Role="Sys_Countaries" EntitySet="Sys_Countaries" />
+            <End Role="Sys_Cities" EntitySet="Sys_Cities" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Sys_UsersAndRoles_Sys_Menues" Association="Self.FK_Sys_UsersAndRoles_Sys_Menues">
+            <End Role="Sys_Menues" EntitySet="Sys_Menues" />
+            <End Role="Sys_UsersAndRoles" EntitySet="Sys_UsersAndRoles" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Sys_UsersAndRoles_Sys_Roles" Association="Self.FK_Sys_UsersAndRoles_Sys_Roles">
+            <End Role="Sys_Roles" EntitySet="Sys_Roles" />
+            <End Role="Sys_UsersAndRoles" EntitySet="Sys_UsersAndRoles" />
+          </AssociationSet>
+          <EntitySet Name="Devices" EntityType="LabickModel.Devices" />
+          <EntitySet Name="EPCs" EntityType="LabickModel.EPCs" />
+          <EntitySet Name="Sys_Area" EntityType="LabickModel.Sys_Area" />
+          <AssociationSet Name="FK_Sys_Area_Sys_Cities" Association="LabickModel.FK_Sys_Area_Sys_Cities">
+            <End Role="Sys_Cities" EntitySet="Sys_Cities" />
+            <End Role="Sys_Area" EntitySet="Sys_Area" />
+          </AssociationSet>
+          <EntitySet Name="TagEvents" EntityType="LabickModel.TagEvents" />
+          <AssociationSet Name="FK_TagEvents_Devices" Association="LabickModel.FK_TagEvents_Devices">
+            <End Role="Devices" EntitySet="Devices" />
+            <End Role="TagEvents" EntitySet="TagEvents" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TagEvents_EPCs" Association="LabickModel.FK_TagEvents_EPCs">
+            <End Role="EPCs" EntitySet="EPCs" />
+            <End Role="TagEvents" EntitySet="TagEvents" />
+          </AssociationSet>
+          <EntitySet Name="Sys_ChekPoints" EntityType="LabickModel.Sys_ChekPoints" />
+          <AssociationSet Name="FK_Sys_ChekPoints_Sys_ChekPoints" Association="LabickModel.FK_Sys_ChekPoints_Sys_ChekPoints">
+            <End Role="Devices" EntitySet="Devices" />
+            <End Role="Sys_ChekPoints" EntitySet="Sys_ChekPoints" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Sys_ChekPoints_Sys_Area" Association="LabickModel.FK_Sys_ChekPoints_Sys_Area">
+            <End Role="Sys_Area" EntitySet="Sys_Area" />
+            <End Role="Sys_ChekPoints" EntitySet="Sys_ChekPoints" />
+          </AssociationSet>
+          <EntitySet Name="Sys_Zone" EntityType="LabickModel.Sys_Zone" />
+          <AssociationSet Name="FK_Sys_Zone_Devices" Association="LabickModel.FK_Sys_Zone_Devices">
+            <End Role="Devices" EntitySet="Devices" />
+            <End Role="Sys_Zone" EntitySet="Sys_Zone" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Sys_Zone_Devices1" Association="LabickModel.FK_Sys_Zone_Devices1">
+            <End Role="Devices" EntitySet="Devices" />
+            <End Role="Sys_Zone" EntitySet="Sys_Zone" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Sys_Zone_Sys_Area" Association="LabickModel.FK_Sys_Zone_Sys_Area">
+            <End Role="Sys_Area" EntitySet="Sys_Area" />
+            <End Role="Sys_Zone" EntitySet="Sys_Zone" />
+          </AssociationSet>
+          <EntitySet Name="G_Users" EntityType="LabickModel.G_Users" />
+          <AssociationSet Name="FK_G_Users_EPCs" Association="LabickModel.FK_G_Users_EPCs">
+            <End Role="EPCs" EntitySet="EPCs" />
+            <End Role="G_Users" EntitySet="G_Users" />
+          </AssociationSet>
+          <AssociationSet Name="FK_G_AirLineCompany_User_G_Users" Association="LabickModel.FK_G_AirLineCompany_User_G_Users">
+            <End Role="G_Users" EntitySet="G_Users" />
+            <End Role="G_AirLineCompany_User" EntitySet="G_AirLineCompany_User" />
+          </AssociationSet>
+          <AssociationSet Name="FK_G_TawafCompany_User_G_Users" Association="LabickModel.FK_G_TawafCompany_User_G_Users">
+            <End Role="G_Users" EntitySet="G_Users" />
+            <End Role="G_TawafCompany_User" EntitySet="G_TawafCompany_User" />
+          </AssociationSet>
+          <AssociationSet Name="FK_G_Users_Sys_Countaries" Association="LabickModel.FK_G_Users_Sys_Countaries">
+            <End Role="Sys_Countaries" EntitySet="Sys_Countaries" />
+            <End Role="G_Users" EntitySet="G_Users" />
+          </AssociationSet>
+          <AssociationSet Name="FK_G_Users_Sys_Languages" Association="LabickModel.FK_G_Users_Sys_Languages">
+            <End Role="Sys_Languages" EntitySet="Sys_Languages" />
+            <End Role="G_Users" EntitySet="G_Users" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Devices">
+          <Key>
+            <PropertyRef Name="DeviceId" />
+          </Key>
+          <Property Name="DeviceId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="DeviceIdentity" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="DeviceName" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="TagEvents" Relationship="LabickModel.FK_TagEvents_Devices" FromRole="Devices" ToRole="TagEvents" />
+          <NavigationProperty Name="Sys_ChekPoints" Relationship="LabickModel.FK_Sys_ChekPoints_Sys_ChekPoints" FromRole="Devices" ToRole="Sys_ChekPoints" />
+          <NavigationProperty Name="Sys_Zone" Relationship="LabickModel.FK_Sys_Zone_Devices" FromRole="Devices" ToRole="Sys_Zone" />
+          <NavigationProperty Name="Sys_Zone1" Relationship="LabickModel.FK_Sys_Zone_Devices1" FromRole="Devices" ToRole="Sys_Zone" />
+        </EntityType>
+        <EntityType Name="EPCs">
+          <Key>
+            <PropertyRef Name="EPCId" />
+          </Key>
+          <Property Name="EPCId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="EPC" Type="String" Nullable="false" MaxLength="124" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="TagEvents" Relationship="LabickModel.FK_TagEvents_EPCs" FromRole="EPCs" ToRole="TagEvents" />
+          <NavigationProperty Name="G_Users" Relationship="LabickModel.FK_G_Users_EPCs" FromRole="EPCs" ToRole="G_Users" />
+        </EntityType>
+        <EntityType Name="Sys_Area">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CityId" Type="Int32" Nullable="false" />
+          <Property Name="AreaNameAr" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="AreaNameEn" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="MaxInArea" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Sys_Cities" Relationship="LabickModel.FK_Sys_Area_Sys_Cities" FromRole="Sys_Area" ToRole="Sys_Cities" />
+          <NavigationProperty Name="Sys_ChekPoints" Relationship="LabickModel.FK_Sys_ChekPoints_Sys_Area" FromRole="Sys_Area" ToRole="Sys_ChekPoints" />
+          <NavigationProperty Name="Sys_Zone" Relationship="LabickModel.FK_Sys_Zone_Sys_Area" FromRole="Sys_Area" ToRole="Sys_Zone" />
+        </EntityType>
+        <Association Name="FK_Sys_Area_Sys_Cities">
+          <End Type="LabickModel.Sys_Cities" Role="Sys_Cities" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="LabickModel.Sys_Area" Role="Sys_Area" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Sys_Cities">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Sys_Area">
+              <PropertyRef Name="CityId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="TagEvents">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UtcTimestamp" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="TagEventId" Type="Byte" Nullable="false" />
+          <Property Name="ChannelId" Type="Int32" Nullable="false" />
+          <Property Name="DeviceId" Type="Int32" />
+          <Property Name="AntennaId" Type="Int32" />
+          <Property Name="ManufacturerId" Type="Int32" />
+          <Property Name="ModelId" Type="Int32" />
+          <Property Name="EPCId" Type="Int32" Nullable="false" />
+          <Property Name="SerialNumberId" Type="Int32" />
+          <Property Name="UserMemoryId" Type="Int32" />
+          <Property Name="DecodeAlgorithmId" Type="Int32" />
+          <Property Name="DecodedEPCId" Type="Int32" />
+          <Property Name="DecodedUserMemoryId" Type="Int32" />
+          <Property Name="DeviceLocationId" Type="Int32" />
+          <Property Name="AntennaLocationId" Type="Int32" />
+          <NavigationProperty Name="Devices" Relationship="LabickModel.FK_TagEvents_Devices" FromRole="TagEvents" ToRole="Devices" />
+          <NavigationProperty Name="EPCs" Relationship="LabickModel.FK_TagEvents_EPCs" FromRole="TagEvents" ToRole="EPCs" />
+        </EntityType>
+        <Association Name="FK_TagEvents_Devices">
+          <End Type="LabickModel.Devices" Role="Devices" Multiplicity="0..1" />
+          <End Type="LabickModel.TagEvents" Role="TagEvents" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Devices">
+              <PropertyRef Name="DeviceId" />
+            </Principal>
+            <Dependent Role="TagEvents">
+              <PropertyRef Name="DeviceId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TagEvents_EPCs">
+          <End Type="LabickModel.EPCs" Role="EPCs" Multiplicity="1" />
+          <End Type="LabickModel.TagEvents" Role="TagEvents" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EPCs">
+              <PropertyRef Name="EPCId" />
+            </Principal>
+            <Dependent Role="TagEvents">
+              <PropertyRef Name="EPCId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="Sys_ChekPoints">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="AreaID" Type="Int32" Nullable="false" />
+          <Property Name="RFIDDeviceID" Type="Int32" Nullable="false" />
+          <Property Name="chekpointNameAr" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="chekpointNameEn" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Devices" Relationship="LabickModel.FK_Sys_ChekPoints_Sys_ChekPoints" FromRole="Sys_ChekPoints" ToRole="Devices" />
+          <NavigationProperty Name="Sys_Area" Relationship="LabickModel.FK_Sys_ChekPoints_Sys_Area" FromRole="Sys_ChekPoints" ToRole="Sys_Area" />
+        </EntityType>
+        <Association Name="FK_Sys_ChekPoints_Sys_ChekPoints">
+          <End Type="LabickModel.Devices" Role="Devices" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="LabickModel.Sys_ChekPoints" Role="Sys_ChekPoints" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Devices">
+              <PropertyRef Name="DeviceId" />
+            </Principal>
+            <Dependent Role="Sys_ChekPoints">
+              <PropertyRef Name="RFIDDeviceID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Sys_ChekPoints_Sys_Area">
+          <End Type="LabickModel.Sys_Area" Role="Sys_Area" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="LabickModel.Sys_ChekPoints" Role="Sys_ChekPoints" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Sys_Area">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Sys_ChekPoints">
+              <PropertyRef Name="AreaID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="Sys_Zone">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="AreaID" Type="Int32" />
+          <Property Name="InDeviceID" Type="Int32" />
+          <Property Name="OutDeviceID" Type="Int32" />
+          <NavigationProperty Name="Devices" Relationship="LabickModel.FK_Sys_Zone_Devices" FromRole="Sys_Zone" ToRole="Devices" />
+          <NavigationProperty Name="Devices1" Relationship="LabickModel.FK_Sys_Zone_Devices1" FromRole="Sys_Zone" ToRole="Devices" />
+          <NavigationProperty Name="Sys_Area" Relationship="LabickModel.FK_Sys_Zone_Sys_Area" FromRole="Sys_Zone" ToRole="Sys_Area" />
+          <Property Name="MaxCount" Type="Int32" />
+        </EntityType>
+        <Association Name="FK_Sys_Zone_Devices">
+          <End Type="LabickModel.Devices" Role="Devices" Multiplicity="0..1" />
+          <End Type="LabickModel.Sys_Zone" Role="Sys_Zone" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Devices">
+              <PropertyRef Name="DeviceId" />
+            </Principal>
+            <Dependent Role="Sys_Zone">
+              <PropertyRef Name="InDeviceID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Sys_Zone_Devices1">
+          <End Type="LabickModel.Devices" Role="Devices" Multiplicity="0..1" />
+          <End Type="LabickModel.Sys_Zone" Role="Sys_Zone" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Devices">
+              <PropertyRef Name="DeviceId" />
+            </Principal>
+            <Dependent Role="Sys_Zone">
+              <PropertyRef Name="OutDeviceID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Sys_Zone_Sys_Area">
+          <End Type="LabickModel.Sys_Area" Role="Sys_Area" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="LabickModel.Sys_Zone" Role="Sys_Zone" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Sys_Area">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Sys_Zone">
+              <PropertyRef Name="AreaID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="G_Users">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NameAr" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="NameEn" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="PassportID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="BirthDate" Type="DateTime" Precision="3" />
+          <Property Name="VisaNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="BarcodeIQ" Type="Int32" />
+          <Property Name="AirLinesCompanyID" Type="Int32" />
+          <Property Name="TawafaCompanyID" Type="Int32" />
+          <Property Name="Gender" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="Photo" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="TouchID" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="PassportSource" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="CountaryID" Type="Int32" />
+          <Property Name="LanguageID" Type="Int32" />
+          <Property Name="PortNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="VisaIssuance" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="IsNedded" Type="Boolean" />
+          <Property Name="BlodGroup" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="MobileNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="IdentityNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="TasreeeNumber" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="UserName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="EPCs" Relationship="LabickModel.FK_G_Users_EPCs" FromRole="G_Users" ToRole="EPCs" />
+          <NavigationProperty Name="G_AirLineCompany_User" Relationship="LabickModel.FK_G_AirLineCompany_User_G_Users" FromRole="G_Users" ToRole="G_AirLineCompany_User" />
+          <NavigationProperty Name="G_TawafCompany_User" Relationship="LabickModel.FK_G_TawafCompany_User_G_Users" FromRole="G_Users" ToRole="G_TawafCompany_User" />
+          <NavigationProperty Name="Sys_Countaries" Relationship="LabickModel.FK_G_Users_Sys_Countaries" FromRole="G_Users" ToRole="Sys_Countaries" />
+          <NavigationProperty Name="Sys_Languages" Relationship="LabickModel.FK_G_Users_Sys_Languages" FromRole="G_Users" ToRole="Sys_Languages" />
+        </EntityType>
+        <Association Name="FK_G_Users_EPCs">
+          <End Type="LabickModel.EPCs" Role="EPCs" Multiplicity="0..1" />
+          <End Type="LabickModel.G_Users" Role="G_Users" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EPCs">
+              <PropertyRef Name="EPCId" />
+            </Principal>
+            <Dependent Role="G_Users">
+              <PropertyRef Name="BarcodeIQ" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_G_AirLineCompany_User_G_Users">
+          <End Type="LabickModel.G_Users" Role="G_Users" Multiplicity="0..1" />
+          <End Type="LabickModel.G_AirLineCompany_User" Role="G_AirLineCompany_User" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="G_Users">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="G_AirLineCompany_User">
+              <PropertyRef Name="G_UserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_G_TawafCompany_User_G_Users">
+          <End Type="LabickModel.G_Users" Role="G_Users" Multiplicity="0..1" />
+          <End Type="LabickModel.G_TawafCompany_User" Role="G_TawafCompany_User" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="G_Users">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="G_TawafCompany_User">
+              <PropertyRef Name="G_UserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_G_Users_Sys_Countaries">
+          <End Type="LabickModel.Sys_Countaries" Role="Sys_Countaries" Multiplicity="0..1" />
+          <End Type="LabickModel.G_Users" Role="G_Users" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Sys_Countaries">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="G_Users">
+              <PropertyRef Name="CountaryID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_G_Users_Sys_Languages">
+          <End Type="LabickModel.Sys_Languages" Role="Sys_Languages" Multiplicity="1" />
+          <End Type="LabickModel.G_Users" Role="G_Users" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="Sys_Languages">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="G_Users">
+              <PropertyRef Name="ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="LabickModelStoreContainer" CdmEntityContainer="LabickEntities">
+          <EntitySetMapping Name="G_AirLineCompany">
+            <EntityTypeMapping TypeName="LabickModel.G_AirLineCompany">
+              <MappingFragment StoreEntitySet="G_AirLineCompany">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="NameAr" ColumnName="NameAr" />
+                <ScalarProperty Name="NameEn" ColumnName="NameEn" />
+                <ScalarProperty Name="Code" ColumnName="Code" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Tel" ColumnName="Tel" />
+                <ScalarProperty Name="Fax" ColumnName="Fax" />
+                <ScalarProperty Name="TypeID" ColumnName="TypeID" />
+                <ScalarProperty Name="TravelID" ColumnName="TravelID" />
+                <ScalarProperty Name="ComeFrom" ColumnName="ComeFrom" />
+                <ScalarProperty Name="ComeTo" ColumnName="ComeTo" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="CreatedUserID" ColumnName="CreatedUserID" />
+                <ScalarProperty Name="LastUpdatedDate" ColumnName="LastUpdatedDate" />
+                <ScalarProperty Name="LastUpdatedUserID" ColumnName="LastUpdatedUserID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="G_Companies">
+            <EntityTypeMapping TypeName="LabickModel.G_Companies">
+              <MappingFragment StoreEntitySet="G_Companies">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="NameAr" ColumnName="NameAr" />
+                <ScalarProperty Name="NameEn" ColumnName="NameEn" />
+                <ScalarProperty Name="Code" ColumnName="Code" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Tel" ColumnName="Tel" />
+                <ScalarProperty Name="Fax" ColumnName="Fax" />
+                <ScalarProperty Name="TypeID" ColumnName="TypeID" />
+                <ScalarProperty Name="HamalaName" ColumnName="HamalaName" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="CreatedUserID" ColumnName="CreatedUserID" />
+                <ScalarProperty Name="LastUpdatedDate" ColumnName="LastUpdatedDate" />
+                <ScalarProperty Name="LastUpdatedUserID" ColumnName="LastUpdatedUserID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="G_TawafCompany">
+            <EntityTypeMapping TypeName="LabickModel.G_TawafCompany">
+              <MappingFragment StoreEntitySet="G_TawafCompany">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="NameAr" ColumnName="NameAr" />
+                <ScalarProperty Name="NameEn" ColumnName="NameEn" />
+                <ScalarProperty Name="Code" ColumnName="Code" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Tel" ColumnName="Tel" />
+                <ScalarProperty Name="Fax" ColumnName="Fax" />
+                <ScalarProperty Name="TypeID" ColumnName="TypeID" />
+                <ScalarProperty Name="CityID" ColumnName="CityID" />
+                <ScalarProperty Name="TasreehID" ColumnName="TasreehID" />
+                <ScalarProperty Name="HamlaID" ColumnName="HamlaID" />
+                <ScalarProperty Name="ComeFrom" ColumnName="ComeFrom" />
+                <ScalarProperty Name="ComeTo" ColumnName="ComeTo" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="CreatedUserID" ColumnName="CreatedUserID" />
+                <ScalarProperty Name="LastUpdatedDate" ColumnName="LastUpdatedDate" />
+                <ScalarProperty Name="LastUpdatedUserID" ColumnName="LastUpdatedUserID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="G_TawafCompany_User">
+            <EntityTypeMapping TypeName="LabickModel.G_TawafCompany_User">
+              <MappingFragment StoreEntitySet="G_TawafCompany_User">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="CompanyID" ColumnName="CompanyID" />
+                <ScalarProperty Name="G_UserID" ColumnName="G_UserID" />
+                <ScalarProperty Name="TasreehID" ColumnName="TasreehID" />
+                <ScalarProperty Name="HamlaID" ColumnName="HamlaID" />
+                <ScalarProperty Name="ComeFrom" ColumnName="ComeFrom" />
+                <ScalarProperty Name="ComeTo" ColumnName="ComeTo" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="CreatedUserID" ColumnName="CreatedUserID" />
+                <ScalarProperty Name="LastUpdatedDate" ColumnName="LastUpdatedDate" />
+                <ScalarProperty Name="LastUpdatedUserID" ColumnName="LastUpdatedUserID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Sys_Cities">
+            <EntityTypeMapping TypeName="LabickModel.Sys_Cities">
+              <MappingFragment StoreEntitySet="Sys_Cities">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="NameAr" ColumnName="NameAr" />
+                <ScalarProperty Name="NameEn" ColumnName="NameEn" />
+                <ScalarProperty Name="CountrayID" ColumnName="CountrayID" />
+                <ScalarProperty Name="Code" ColumnName="Code" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="CreatedUserID" ColumnName="CreatedUserID" />
+                <ScalarProperty Name="LastUpdatedDate" ColumnName="LastUpdatedDate" />
+                <ScalarProperty Name="LastUpdatedUserID" ColumnName="LastUpdatedUserID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Sys_Countaries">
+            <EntityTypeMapping TypeName="LabickModel.Sys_Countaries">
+              <MappingFragment StoreEntitySet="Sys_Countaries">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="NameAr" ColumnName="NameAr" />
+                <ScalarProperty Name="NameEn" ColumnName="NameEn" />
+                <ScalarProperty Name="Code" ColumnName="Code" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="CreatedUserID" ColumnName="CreatedUserID" />
+                <ScalarProperty Name="LastUpdatedDate" ColumnName="LastUpdatedDate" />
+                <ScalarProperty Name="LastUpdatedUserID" ColumnName="LastUpdatedUserID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Sys_Languages">
+            <EntityTypeMapping TypeName="LabickModel.Sys_Languages">
+              <MappingFragment StoreEntitySet="Sys_Languages">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="NameAr" ColumnName="NameAr" />
+                <ScalarProperty Name="NameEn" ColumnName="NameEn" />
+                <ScalarProperty Name="Code" ColumnName="Code" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="CreatedUserID" ColumnName="CreatedUserID" />
+                <ScalarProperty Name="LastUpdatedDate" ColumnName="LastUpdatedDate" />
+                <ScalarProperty Name="LastUpdatedUserID" ColumnName="LastUpdatedUserID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Sys_Menues">
+            <EntityTypeMapping TypeName="LabickModel.Sys_Menues">
+              <MappingFragment StoreEntitySet="Sys_Menues">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="NameAr" ColumnName="NameAr" />
+                <ScalarProperty Name="NameEn" ColumnName="NameEn" />
+                <ScalarProperty Name="Action" ColumnName="Action" />
+                <ScalarProperty Name="Controller" ColumnName="Controller" />
+                <ScalarProperty Name="Area" ColumnName="Area" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="Regdate" ColumnName="Regdate" />
+                <ScalarProperty Name="ReguserID" ColumnName="ReguserID" />
+                <ScalarProperty Name="ParentID" ColumnName="ParentID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Sys_Roles">
+            <EntityTypeMapping TypeName="LabickModel.Sys_Roles">
+              <MappingFragment StoreEntitySet="Sys_Roles">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="NameAr" ColumnName="NameAr" />
+                <ScalarProperty Name="NameEn" ColumnName="NameEn" />
+                <ScalarProperty Name="Code" ColumnName="Code" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="CreatedUserID" ColumnName="CreatedUserID" />
+                <ScalarProperty Name="LastUpdatedDate" ColumnName="LastUpdatedDate" />
+                <ScalarProperty Name="LastUpdatedUserID" ColumnName="LastUpdatedUserID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Sys_Types">
+            <EntityTypeMapping TypeName="LabickModel.Sys_Types">
+              <MappingFragment StoreEntitySet="Sys_Types">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="NameAr" ColumnName="NameAr" />
+                <ScalarProperty Name="NameEn" ColumnName="NameEn" />
+                <ScalarProperty Name="Code" ColumnName="Code" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="CreatedUserID" ColumnName="CreatedUserID" />
+                <ScalarProperty Name="LastUpdatedDate" ColumnName="LastUpdatedDate" />
+                <ScalarProperty Name="LastUpdatedUserID" ColumnName="LastUpdatedUserID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Sys_Users">
+            <EntityTypeMapping TypeName="LabickModel.Sys_Users">
+              <MappingFragment StoreEntitySet="Sys_Users">
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="UsrName" ColumnName="UsrName" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="NameAr" ColumnName="NameAr" />
+                <ScalarProperty Name="NameEn" ColumnName="NameEn" />
+                <ScalarProperty Name="BirthDate" ColumnName="BirthDate" />
+                <ScalarProperty Name="Gender" ColumnName="Gender" />
+                <ScalarProperty Name="CountaryID" ColumnName="CountaryID" />
+                <ScalarProperty Name="MobileNumber" ColumnName="MobileNumber" />
+                <ScalarProperty Name="IdentityNumber" ColumnName="IdentityNumber" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Passport" ColumnName="Passport" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="CreatedUserID" ColumnName="CreatedUserID" />
+                <ScalarProperty Name="LastUpdatedDate" ColumnName="LastUpdatedDate" />
+                <ScalarProperty Name="LastUpdatedUserID" ColumnName="LastUpdatedUserID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Sys_UsersAndRoles">
+            <EntityTypeMapping TypeName="LabickModel.Sys_UsersAndRoles">
+              <MappingFragment StoreEntitySet="Sys_UsersAndRoles">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="RoleID" ColumnName="RoleID" />
+                <ScalarProperty Name="MenueID" ColumnName="MenueID" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="Regdate" ColumnName="Regdate" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="CreatedUserID" ColumnName="CreatedUserID" />
+                <ScalarProperty Name="LastUpdatedDate" ColumnName="LastUpdatedDate" />
+                <ScalarProperty Name="LastUpdateUserID" ColumnName="LastUpdateUserID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="G_AirLineCompany_User">
+            <EntityTypeMapping TypeName="LabickModel.G_AirLineCompany_User">
+              <MappingFragment StoreEntitySet="G_AirLineCompany_User">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="CompanyID" ColumnName="CompanyID" />
+                <ScalarProperty Name="G_UserID" ColumnName="G_UserID" />
+                <ScalarProperty Name="TravelID" ColumnName="TravelID" />
+                <ScalarProperty Name="ComeFrom" ColumnName="ComeFrom" />
+                <ScalarProperty Name="ComeTo" ColumnName="ComeTo" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="CreatedUserID" ColumnName="CreatedUserID" />
+                <ScalarProperty Name="LastUpdatedDate" ColumnName="LastUpdatedDate" />
+                <ScalarProperty Name="LastUpdatedUserID" ColumnName="LastUpdatedUserID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Devices">
+            <EntityTypeMapping TypeName="LabickModel.Devices">
+              <MappingFragment StoreEntitySet="Devices">
+                <ScalarProperty Name="DeviceName" ColumnName="DeviceName" />
+                <ScalarProperty Name="DeviceIdentity" ColumnName="DeviceIdentity" />
+                <ScalarProperty Name="DeviceId" ColumnName="DeviceId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="EPCs">
+            <EntityTypeMapping TypeName="LabickModel.EPCs">
+              <MappingFragment StoreEntitySet="EPCs">
+                <ScalarProperty Name="EPC" ColumnName="EPC" />
+                <ScalarProperty Name="EPCId" ColumnName="EPCId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Sys_Area">
+            <EntityTypeMapping TypeName="LabickModel.Sys_Area">
+              <MappingFragment StoreEntitySet="Sys_Area">
+                <ScalarProperty Name="MaxInArea" ColumnName="MaxInArea" />
+                <ScalarProperty Name="AreaNameEn" ColumnName="AreaNameEn" />
+                <ScalarProperty Name="AreaNameAr" ColumnName="AreaNameAr" />
+                <ScalarProperty Name="CityId" ColumnName="CityId" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TagEvents">
+            <EntityTypeMapping TypeName="LabickModel.TagEvents">
+              <MappingFragment StoreEntitySet="TagEvents">
+                <ScalarProperty Name="AntennaLocationId" ColumnName="AntennaLocationId" />
+                <ScalarProperty Name="DeviceLocationId" ColumnName="DeviceLocationId" />
+                <ScalarProperty Name="DecodedUserMemoryId" ColumnName="DecodedUserMemoryId" />
+                <ScalarProperty Name="DecodedEPCId" ColumnName="DecodedEPCId" />
+                <ScalarProperty Name="DecodeAlgorithmId" ColumnName="DecodeAlgorithmId" />
+                <ScalarProperty Name="UserMemoryId" ColumnName="UserMemoryId" />
+                <ScalarProperty Name="SerialNumberId" ColumnName="SerialNumberId" />
+                <ScalarProperty Name="EPCId" ColumnName="EPCId" />
+                <ScalarProperty Name="ModelId" ColumnName="ModelId" />
+                <ScalarProperty Name="ManufacturerId" ColumnName="ManufacturerId" />
+                <ScalarProperty Name="AntennaId" ColumnName="AntennaId" />
+                <ScalarProperty Name="DeviceId" ColumnName="DeviceId" />
+                <ScalarProperty Name="ChannelId" ColumnName="ChannelId" />
+                <ScalarProperty Name="TagEventId" ColumnName="TagEventId" />
+                <ScalarProperty Name="UtcTimestamp" ColumnName="UtcTimestamp" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Sys_ChekPoints">
+            <EntityTypeMapping TypeName="LabickModel.Sys_ChekPoints">
+              <MappingFragment StoreEntitySet="Sys_ChekPoints">
+                <ScalarProperty Name="chekpointNameEn" ColumnName="chekpointNameEn" />
+                <ScalarProperty Name="chekpointNameAr" ColumnName="chekpointNameAr" />
+                <ScalarProperty Name="RFIDDeviceID" ColumnName="RFIDDeviceID" />
+                <ScalarProperty Name="AreaID" ColumnName="AreaID" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Sys_Zone">
+            <EntityTypeMapping TypeName="LabickModel.Sys_Zone">
+              <MappingFragment StoreEntitySet="Sys_Zone">
+                <ScalarProperty Name="MaxCount" ColumnName="MaxCount" />
+                <ScalarProperty Name="OutDeviceID" ColumnName="OutDeviceID" />
+                <ScalarProperty Name="InDeviceID" ColumnName="InDeviceID" />
+                <ScalarProperty Name="AreaID" ColumnName="AreaID" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="G_Users">
+            <EntityTypeMapping TypeName="LabickModel.G_Users">
+              <MappingFragment StoreEntitySet="G_Users">
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="TasreeeNumber" ColumnName="TasreeeNumber" />
+                <ScalarProperty Name="IdentityNumber" ColumnName="IdentityNumber" />
+                <ScalarProperty Name="MobileNumber" ColumnName="MobileNumber" />
+                <ScalarProperty Name="BlodGroup" ColumnName="BlodGroup" />
+                <ScalarProperty Name="IsNedded" ColumnName="IsNedded" />
+                <ScalarProperty Name="VisaIssuance" ColumnName="VisaIssuance" />
+                <ScalarProperty Name="PortNumber" ColumnName="PortNumber" />
+                <ScalarProperty Name="LanguageID" ColumnName="LanguageID" />
+                <ScalarProperty Name="CountaryID" ColumnName="CountaryID" />
+                <ScalarProperty Name="PassportSource" ColumnName="PassportSource" />
+                <ScalarProperty Name="TouchID" ColumnName="TouchID" />
+                <ScalarProperty Name="Photo" ColumnName="Photo" />
+                <ScalarProperty Name="Gender" ColumnName="Gender" />
+                <ScalarProperty Name="TawafaCompanyID" ColumnName="TawafaCompanyID" />
+                <ScalarProperty Name="AirLinesCompanyID" ColumnName="AirLinesCompanyID" />
+                <ScalarProperty Name="BarcodeIQ" ColumnName="BarcodeIQ" />
+                <ScalarProperty Name="VisaNumber" ColumnName="VisaNumber" />
+                <ScalarProperty Name="BirthDate" ColumnName="BirthDate" />
+                <ScalarProperty Name="PassportID" ColumnName="PassportID" />
+                <ScalarProperty Name="NameEn" ColumnName="NameEn" />
+                <ScalarProperty Name="NameAr" ColumnName="NameAr" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

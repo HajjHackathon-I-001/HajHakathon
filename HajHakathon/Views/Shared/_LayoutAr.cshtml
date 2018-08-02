@@ -1,0 +1,283 @@
+﻿@{
+
+    Layout = null;
+    @functions {
+        private string GetCookie()
+        {
+            var result = Request.Cookies["langflag"];
+            if (result != null)
+            {
+                return result.Value;
+            }
+            else
+            {
+                return "flag-icon-sa";
+            }
+        }
+    }
+
+
+
+    string lngflgtext = GetCookie();
+
+
+
+}
+
+<!DOCTYPE html>
+<html class="loading" lang="en" data-textdirection="rtl">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
+    <meta name="description" content="">
+    <meta name="keywords" content="Medical,Hospital">
+    <meta name="author" content="Eng.Abdulaziz Dammas">
+    <title>
+        @HajHakathon.Resources.GbResoures.SystemName
+    </title>
+    <link rel="apple-touch-icon" href=@Url.Content("~/Content/app-assets/images/ico/apple-icon-120.png")>
+    <link rel="shortcut icon" type="image/x-icon" href=@Url.Content("~/Content/app-assets/images/ico/favicon.ico")>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Quicksand:300,400,500,700"
+        rel="stylesheet">
+
+
+    @*<link href=@Url.Content("~/Content/app-assets/css/googlefontapi.css") rel="stylesheet" />*@
+
+
+    <link href="https://maxcdn.icons8.com/fonts/line-awesome/1.1/css/line-awesome.min.css" rel="stylesheet">
+
+
+    @*<link href=@Url.Content("~/Content/app-assets/css/line-awesome.min.css") rel="stylesheet">*@
+
+    @if (lngflgtext == "flag-icon-sa")
+    {
+        <!-- BEGIN VENDOR CSS-->
+        <link rel="stylesheet" type="text/css" href=@Url.Content("~/Content/app-assets/css-rtl/vendors.css")>
+        <link rel="stylesheet" type="text/css" href=@Url.Content("~/Content/app-assets/vendors/css/tables/datatable/datatables.min.css")>
+        <link rel="stylesheet" type="text/css" href=@Url.Content("~/Content/app-assets/vendors/css/tables/extensions/responsive.dataTables.min.css")>
+        <link rel="stylesheet" type="text/css" href=@Url.Content("~/Content/app-assets/vendors/css/tables/extensions/colReorder.dataTables.min.css")>
+        <link rel="stylesheet" type="text/css" href=@Url.Content("~/Content/app-assets/vendors/css/tables/extensions/buttons.dataTables.min.css")>
+        <link rel="stylesheet" type="text/css" href=@Url.Content("~/Content/app-assets/vendors/css/tables/datatable/buttons.bootstrap4.min.css")>
+        <link rel="stylesheet" type="text/css" href=@Url.Content("~/Content/app-assets/vendors/css/tables/extensions/fixedHeader.dataTables.min.css")>
+  <!-- END VENDOR CSS-->
+  <!-- BEGINMODERNCSS-->
+        <link rel="stylesheet" type="text/css" href=@Url.Content("~/Content/app-assets/css-rtl/app.css")>
+        <link rel="stylesheet" type="text/css" href=@Url.Content("~/Content/app-assets/css-rtl/custom-rtl.css")>
+  <!-- END MODERN CSS-->
+  <!-- BEGIN Page Level CSS-->
+        <link rel="stylesheet" type="text/css" href=@Url.Content("~/Content/app-assets/css-rtl/core/menu/menu-types/vertical-menu.css")>
+        <link rel="stylesheet" type="text/css" href=@Url.Content("~/Content/app-assets/css-rtl/core/colors/palette-gradient.css")>
+  <!-- END Page Level CSS-->
+  <!-- BEGIN Custom CSS-->
+        <link rel="stylesheet" type="text/css" href=@Url.Content("~/Content/assets/css/style-rtl.css")>
+  <!-- END Custom CSS-->
+    }
+    else
+    {
+        <!-- BEGIN VENDOR CSS-->
+        <link rel="stylesheet" type="text/css" href=@Url.Content("~/Content/app-assets/css/vendors.css")>
+        <link rel="stylesheet" type="text/css" href=@Url.Content("~/Content/app-assets/vendors/css/tables/datatable/datatables.min.css")>
+        <link rel="stylesheet" type="text/css" href=@Url.Content("~/Content/app-assets/vendors/css/tables/extensions/responsive.dataTables.min.css")>
+        <link rel="stylesheet" type="text/css" href=@Url.Content("~/Content/app-assets/vendors/css/tables/extensions/colReorder.dataTables.min.css")>
+        <link rel="stylesheet" type="text/css" href=@Url.Content("~/Content/app-assets/vendors/css/tables/extensions/buttons.dataTables.min.css")>
+        <link rel="stylesheet" type="text/css" href=@Url.Content("~/Content/app-assets/vendors/css/tables/datatable/buttons.bootstrap4.min.css")>
+        <link rel="stylesheet" type="text/css" href=@Url.Content("~/Content/app-assets/vendors/css/tables/extensions/fixedHeader.dataTables.min.css")>
+  <!-- END VENDOR CSS-->
+  <!-- BEGIN MODERN CSS-->
+        <link rel="stylesheet" type="text/css" href=@Url.Content("~/Content/app-assets/css/app.css")>
+  <!-- END MODERN CSS-->
+  <!-- BEGIN Page Level CSS-->
+        <link rel="stylesheet" type="text/css" href=@Url.Content("~/Content/app-assets/css/core/menu/menu-types/vertical-menu.css")>
+        <link rel="stylesheet" type="text/css" href=@Url.Content("~/Content/app-assets/css/core/colors/palette-gradient.css")>
+  <!-- END Page Level CSS-->
+  <!-- BEGIN Custom CSS-->
+        <link rel="stylesheet" type="text/css" href=@Url.Content("~/Content/assets/css/style.css")>
+  <!-- END Custom CSS-->
+    }
+
+    
+    
+    
+</head>
+<body class="vertical-layout vertical-menu 2-columns   menu-expanded fixed-navbar"
+      data-open="click" data-menu="vertical-menu" data-col="2-columns">
+    <!-- fixed-top-->
+    <nav class="header-navbar navbar-expand-md navbar navbar-with-menu navbar-without-dd-arrow fixed-top navbar-semi-light bg-info navbar-shadow">
+        <div class="navbar-wrapper">
+            <div class="navbar-header">
+                <ul class="nav navbar-nav flex-row">
+                    <li class="nav-item mobile-menu d-md-none mr-auto"><a class="nav-link nav-menu-main menu-toggle hidden-xs" href="#"><i class="ft-menu font-large-1"></i></a></li>
+                    <li class="nav-item">
+                        <a class="navbar-brand" href=@Url.Action("Index","AdminHome")>
+                            <img class="brand-logo"  alt="@HajHakathon.Resources.GbResoures.SystemName" src=@Url.Content("~/Content/app-assets/images/logo/HajPlatFormLogo2.png") style="height:50px;width:60px">
+                            <h3 class="brand-text Bold"><b>@HajHakathon.Resources.GbResoures.SystemName</b></h3>
+                        </a>
+                    </li>
+                    <li class="nav-item d-md-none">
+                        <a class="nav-link open-navbar-container" data-toggle="collapse" data-target="#navbar-mobile"><i class="la la-ellipsis-v"></i></a>
+                    </li>
+                </ul>
+            </div>
+            @Html.Partial("_HeaderParial")
+        </div>
+    </nav>
+    <!-- ////////////////////////////////////////////////////////////////////////////-->
+    @Html.Partial("_MenuSidePartial")
+    <div class="app-content content">
+        <div class="content-wrapper">
+            <div class="content-header row">
+            </div>
+            <div class="content-body">
+               @RenderBody()
+            </div>
+        </div>
+    </div>
+    <!-- ////////////////////////////////////////////////////////////////////////////-->
+    <footer class="footer footer-static footer-light navbar-border navbar-shadow">
+        <p class="clearfix blue-grey lighten-2 text-sm-center mb-0 px-2">
+            <span class="float-md-left d-block d-md-inline-block">
+                Copyright &copy; 2018 <a class="text-bold-800 grey darken-2" href="http://dms4631.com"
+                                         target="_blank">Abdulaziz Dammas</a>, All rights reserved.
+            </span>
+            <span class="float-md-right d-block d-md-inline-blockd-none d-lg-block">@DateTime.Now.Year - @DateTime.Now.AddYears(1).Year <i class="ft-heart pink"></i></span>
+        </p>
+    </footer>
+    <!--Start of Tawk.to Script-->
+    <script type="text/javascript">
+var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+(function(){
+var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+s1.async=true;
+s1.src='https://embed.tawk.to/5b62b080df040c3e9e0c3474/default';
+s1.charset='UTF-8';
+s1.setAttribute('crossorigin','*');
+s0.parentNode.insertBefore(s1,s0);
+})();
+    </script>
+    <!--End of Tawk.to Script-->
+
+    @RenderSection("ScriptsBeforVendor", required: false)
+    @Scripts.Render("~/bundles/vendor")
+    @RenderSection("ScriptsAfterVendor", required: false)
+    @Scripts.Render("~/bundles/Modern")
+    @Scripts.Render("~/bundles/pageleveljs")
+    @RenderSection("ScriptsAfterpageleveljs", required: false)
+    @RenderSection("JSScript", required: false)
+
+@{
+    var conf = System.Web.Configuration.WebConfigurationManager.OpenWebConfiguration(System.Web.Hosting.HostingEnvironment.ApplicationVirtualPath);
+    var section = (System.Web.Configuration.SessionStateSection)conf.GetSection("system.web/sessionState");
+    string timeout = section.Timeout.TotalMinutes.ToString();
+}
+
+    <div class="modal fade text-left" id="divPopupTimeOut" data-backdrop="false" tabindex="-1" role="dialog" aria-labelledby="myModalLabel12"
+         aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header bg-warning white">
+                    <h4 class="modal-title white" id="myModalLabel12"><i class="la la-tree"></i>تنبيه انتهاء الجلسة </h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    
+                    <div class="alert alert-danger" role="alert">
+                        تنبيه سيتم الخروج من النظام  بعد <span id="CountDownHolder"></span> اضغط على استمرار للمتابعة
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn grey btn-outline-secondary" onclick="SessionTimeout.sendKeepAlive();">استمرار</button>
+                    <button type="button" class="btn btn-outline-warning" onclick="SessionTimeout.hidePopup();">الغاء - Cancle</button>
+                    @*<button type="button" class="btn grey btn-outline-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-outline-warning">Save changes</button>*@
+                </div>
+            </div>
+        </div>
+    </div>
+  
+
+    </body>
+</html>
+
+@functions {
+    public int PopupShowDelay
+    {
+        get
+        {
+            return 1000 * (Convert.ToInt32(FormsAuthentication.Timeout.TotalSeconds) - 130);
+        }
+    }
+} 
+
+
+
+<script type="text/javascript">
+    var loginUrl='@Url.Action("Login", "LoginSystemAdmin")';
+    var extendMethodUrl='@Url.Action("Index","Home")';
+    $(document).ready(function(){
+            SessionTimeout.schedulePopup();
+        });
+
+    window.SessionTimeout = (function() {
+            var _timeLeft, _popupTimer, _countDownTimer;
+            var stopTimers = function() {
+                window.clearTimeout(_popupTimer);
+                window.clearTimeout(_countDownTimer);
+            };
+            var updateCountDown = function() {
+                var min = Math.floor(_timeLeft / 60);
+                var sec = _timeLeft % 60;
+                if(sec < 10)
+                    sec = "0" + sec;
+
+                document.getElementById("CountDownHolder").innerHTML = min + ":" + sec;
+
+                if(_timeLeft > 0) {
+                    _timeLeft--;
+                    _countDownTimer = window.setTimeout(updateCountDown, 1000);
+                } else  {
+                    document.location = loginUrl;
+                }
+            };
+            var showPopup = function() {
+            $("#divPopupTimeOut").show();
+                _timeLeft = 120;
+                updateCountDown();
+            };
+            var schedulePopup = function() {
+            $("#divPopupTimeOut").hide();
+                stopTimers();
+                _popupTimer = window.setTimeout(showPopup, @PopupShowDelay);
+            };
+            var hidePopup=function(){
+            $("#divPopupTimeOut").hide();
+            };
+            var sendKeepAlive = function() {
+                stopTimers();
+                $("#divPopupTimeOut").hide();
+                $.ajax({
+                    type: "GET",
+                    url: extendMethodUrl,
+                    contentType: "application/json; charset=utf-8",
+                    dataType: "json",
+                    success: function successFunc(response) {
+                        SessionTimeout.schedulePopup();
+                    },
+                    error:function(){
+                    }
+                });
+            };
+            return {
+                schedulePopup: schedulePopup,
+                sendKeepAlive: sendKeepAlive,
+                hidePopup:hidePopup,
+                stopTimers:stopTimers,
+            };
+
+        })();
+
+</script>
+
+

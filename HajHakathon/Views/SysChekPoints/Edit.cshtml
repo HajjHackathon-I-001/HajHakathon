@@ -1,0 +1,139 @@
+﻿@model HajHakathon.Models.Sys_ChekPoints
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+
+<div id="crypto-stats-3" class="row">
+
+    <div class="col-xl-12 col-12">
+
+        <div class="card crypto-card-3 pull-up">
+            <div class="row">
+
+                <div class="col-xl-12 col-12">
+                    <div class="row">
+                        <div class="col-lg-12 col-12">
+                            <div class="card">
+                                <div class="col-md-12">
+                                    <div class="card">
+                                        <div class="card-header">
+                                            <h4 class="card-title" id="basic-layout-form"></h4>
+                                            <a class="heading-elements-toggle"><i class="la la-ellipsis-v font-medium-3"></i></a>
+                                            <div class="heading-elements">
+                                                <ul class="list-inline mb-0"></ul>
+                                            </div>
+                                        </div>
+                                        <div class="card-content collapse show">
+                                            <div class="card-body">
+                                                <div class="card-text">
+
+                                                </div>
+                                                <!-- Form Start Code -->
+                               @using (Html.BeginForm("Edit", null, FormMethod.Post, new { @class = "form", enctype = "multipart/form-data" }))
+								{
+                                    @Html.AntiForgeryToken()
+                                    
+                                    <div class="form-body">
+
+                                        <h4 class="form-section"><i class="ft-user"></i>@ViewBag.Title</h4>
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+		</div>
+		</div>
+		<div class="row">  
+
+        
+		 <div class="col-md-6">
+         <div class="form-group">                                
+			
+            @Html.LabelFor(model => model.AreaID, "AreaID")
+			
+				
+                @Html.DropDownList("AreaID", null, htmlAttributes: new {  @class = "form-control", @placeholder = @"" + Html.DisplayNameFor(model => model.AreaID) + @"" })
+				
+                @Html.ValidationMessageFor(model => model.AreaID, "", new { @class = "text-danger" })
+				</div>
+				</div>
+				
+
+        
+		 <div class="col-md-6">
+         <div class="form-group">                                
+			
+            @Html.LabelFor(model => model.RFIDDeviceID, "RFIDDeviceID")
+			
+				
+                @Html.DropDownList("RFIDDeviceID", null, htmlAttributes: new {  @class = "form-control", @placeholder = @"" + Html.DisplayNameFor(model => model.RFIDDeviceID) + @"" })
+				
+                @Html.ValidationMessageFor(model => model.RFIDDeviceID, "", new { @class = "text-danger" })
+				</div>
+				</div>
+				
+
+        
+		 <div class="col-md-6">
+         <div class="form-group">                                
+            @Html.LabelFor(model => model.chekpointNameAr)
+			
+			
+                @Html.EditorFor(model => model.chekpointNameAr,new { htmlAttributes = new {  @class = "form-control", @placeholder = @"" + Html.DisplayNameFor(model => model.chekpointNameAr) + @"" } })
+				
+                @Html.ValidationMessageFor(model => model.chekpointNameAr, "", new { @class = "text-danger" })
+				</div>
+				</div>
+				
+
+        
+		 <div class="col-md-6">
+         <div class="form-group">                                
+            @Html.LabelFor(model => model.chekpointNameEn)
+			
+			
+                @Html.EditorFor(model => model.chekpointNameEn,new { htmlAttributes = new {  @class = "form-control", @placeholder = @"" + Html.DisplayNameFor(model => model.chekpointNameEn) + @"" } })
+				
+                @Html.ValidationMessageFor(model => model.chekpointNameEn, "", new { @class = "text-danger" })
+				</div>
+				</div>
+				
+												
+                                            
+											
+									</div>
+                                    <div class="row">
+                                            <div class="form-actions">
+                                                 <button type="submit" class="btn btn-primary">
+                                                    <i class="la la-check-square-o"></i> @HajHakathon.Resources.GbResoures.Save
+                                                </button>
+                                                <button type="button" class="btn btn-warning mr-1">
+                                                    <i class="ft-x"></i> @HajHakathon.Resources.GbResoures.Cancel
+                                                </button>
+                                            </div>
+										</div>
+
+
+
+                                                <!-- Form End Code -->
+                                            </div>
+											}
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+

@@ -1,0 +1,231 @@
+﻿@model HajHakathon.ViewModel.LoginUsers
+
+@{
+        
+        Layout = null;
+        @functions {
+        private string GetCookie()
+    {
+        var result = Request.Cookies["langflag"];
+        if (result != null)
+        {
+            return result.Value;
+            }
+            else
+            {
+                return "flag-icon-sa";
+            }
+        }
+    }
+
+
+
+    string lngflgtext = GetCookie();
+
+
+
+}
+
+<!DOCTYPE html>
+<html class="loading" lang="en" data-textdirection="rtl">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
+    <meta name="description" content="">
+    <meta name="keywords" content="تدريب,دورات,معهد,;,vshj">
+    <meta name="author" content="Eng.Abdulaziz Dammas">
+    <title>
+        @HajHakathon.Resources.GbResoures.SystemName
+    </title>
+    <link rel="apple-touch-icon" href=@Url.Content("~/Content/app-assets/images/ico/apple-icon-120.png")>
+    <link rel="shortcut icon" type="image/x-icon" href=@Url.Content("~/Content/app-assets/images/ico/favicon.ico")>
+    @*<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Quicksand:300,400,500,700"
+          rel="stylesheet">*@
+    <link href=@Url.Content("~/Content/app-assets/css/googlefontapi.css") rel="stylesheet" />
+    @*<link href="https://maxcdn.icons8.com/fonts/line-awesome/1.1/css/line-awesome.min.css" rel="stylesheet">*@
+    <link href=@Url.Content("~/Content/app-assets/css/line-awesome.min.css") rel="stylesheet">
+
+    @if (lngflgtext == "flag-icon-sa")
+    {
+        <!-- BEGIN VENDOR CSS-->
+        <link rel="stylesheet" type="text/css" href=@Url.Content("~/Content/app-assets/css-rtl/vendors.css")>
+        <link rel="stylesheet" type="text/css" href=@Url.Content("~/Content/app-assets/vendors/css/tables/datatable/datatables.min.css")>
+        <link rel="stylesheet" type="text/css" href=@Url.Content("~/Content/app-assets/vendors/css/tables/extensions/responsive.dataTables.min.css")>
+        <link rel="stylesheet" type="text/css" href=@Url.Content("~/Content/app-assets/vendors/css/tables/extensions/colReorder.dataTables.min.css")>
+        <link rel="stylesheet" type="text/css" href=@Url.Content("~/Content/app-assets/vendors/css/tables/extensions/buttons.dataTables.min.css")>
+        <link rel="stylesheet" type="text/css" href=@Url.Content("~/Content/app-assets/vendors/css/tables/datatable/buttons.bootstrap4.min.css")>
+        <link rel="stylesheet" type="text/css" href=@Url.Content("~/Content/app-assets/vendors/css/tables/extensions/fixedHeader.dataTables.min.css")>
+  <!-- END VENDOR CSS-->
+  <!-- BEGINMODERNCSS-->
+        <link rel="stylesheet" type="text/css" href=@Url.Content("~/Content/app-assets/css-rtl/app.css")>
+        <link rel="stylesheet" type="text/css" href=@Url.Content("~/Content/app-assets/css-rtl/custom-rtl.css")>
+  <!-- END MODERN CSS-->
+  <!-- BEGIN Page Level CSS-->
+        <link rel="stylesheet" type="text/css" href=@Url.Content("~/Content/app-assets/css-rtl/core/menu/menu-types/vertical-menu.css")>
+        <link rel="stylesheet" type="text/css" href=@Url.Content("~/Content/app-assets/css-rtl/core/colors/palette-gradient.css")>
+  <!-- END Page Level CSS-->
+  <!-- BEGIN Custom CSS-->
+        <link rel="stylesheet" type="text/css" href=@Url.Content("~/Content/assets/css/style-rtl.css")>
+  <!-- END Custom CSS-->
+    }
+    else
+    {
+        <!-- BEGIN VENDOR CSS-->
+        <link rel="stylesheet" type="text/css" href=@Url.Content("~/Content/app-assets/css/vendors.css")>
+        <link rel="stylesheet" type="text/css" href=@Url.Content("~/Content/app-assets/vendors/css/tables/datatable/datatables.min.css")>
+        <link rel="stylesheet" type="text/css" href=@Url.Content("~/Content/app-assets/vendors/css/tables/extensions/responsive.dataTables.min.css")>
+        <link rel="stylesheet" type="text/css" href=@Url.Content("~/Content/app-assets/vendors/css/tables/extensions/colReorder.dataTables.min.css")>
+        <link rel="stylesheet" type="text/css" href=@Url.Content("~/Content/app-assets/vendors/css/tables/extensions/buttons.dataTables.min.css")>
+        <link rel="stylesheet" type="text/css" href=@Url.Content("~/Content/app-assets/vendors/css/tables/datatable/buttons.bootstrap4.min.css")>
+        <link rel="stylesheet" type="text/css" href=@Url.Content("~/Content/app-assets/vendors/css/tables/extensions/fixedHeader.dataTables.min.css")>
+  <!-- END VENDOR CSS-->
+  <!-- BEGIN MODERN CSS-->
+        <link rel="stylesheet" type="text/css" href=@Url.Content("~/Content/app-assets/css/app.css")>
+  <!-- END MODERN CSS-->
+  <!-- BEGIN Page Level CSS-->
+        <link rel="stylesheet" type="text/css" href=@Url.Content("~/Content/app-assets/css/core/menu/menu-types/vertical-menu.css")>
+        <link rel="stylesheet" type="text/css" href=@Url.Content("~/Content/app-assets/css/core/colors/palette-gradient.css")>
+  <!-- END Page Level CSS-->
+  <!-- BEGIN Custom CSS-->
+        <link rel="stylesheet" type="text/css" href=@Url.Content("~/Content/assets/css/style.css")>
+  <!-- END Custom CSS-->
+    }
+
+
+
+    
+</head>
+<body class="vertical-layout vertical-menu 1-column  bg-full-screen-image menu-expanded blank-page blank-page"
+      data-open="click" data-menu="vertical-menu" data-col="1-column">
+    <!-- ////////////////////////////////////////////////////////////////////////////-->
+    <div class="app-content content">
+        <div class="content-wrapper">
+            <div class="content-header row">
+            </div>
+            <div class="content-body">
+                <section class="flexbox-container">
+                    <div class="col-12 d-flex align-items-center justify-content-center">
+                        <div class="col-md-4 col-10 box-shadow-2 p-0">
+                            <div class="card border-grey border-lighten-3 px-1 py-1 m-0">
+                                <div class="card-header border-0">
+                                    <div class="card-title text-center">
+                                        <img src=@Url.Content("~/Content/app-assets/images/logo/HajPlatFormLogo2.png") alt="branding logo" class="profile-image">
+                                    </div>
+                                    <br/>
+                                    <h3 class="card-subtitle  text-muted text-center font-large-1 pt-1">
+                                        <span>@HajHakathon.Resources.GbResoures.SystemName</span>
+                                    </h3>
+                                </div>
+                                <div class="card-content">
+                                    
+                                    <p class="card-subtitle line-on-side text-muted text-center font-small-3 mx-2 my-1">
+                                        <span>@HajHakathon.Resources.GbResoures.LoginSystem</span>
+                                    </p>
+                                   <div class="card-body">
+                                        @using (Html.BeginForm("Login", "LoginSystemAdmin", FormMethod.Post))
+                                        {
+                                            @Html.AntiForgeryToken()
+                                            @Html.HiddenFor(m=>m.ReturnUrl)
+                                        <fieldset class="form-group position-relative has-icon-left">
+                                            @Html.EditorFor(model => model.UserName, new { htmlAttributes = new { @class = "form-control", @placeholder = @"" + HajHakathon.Resources.GbResoures.LoginUserName + @""} })
+                                            @Html.ValidationMessageFor(model => model.UserName, "", new { @class = "text-danger" })
+                                            <div class="form-control-position">
+                                                <i class="ft-user"></i>
+                                            </div>
+                                        </fieldset>
+                                        <fieldset class="form-group position-relative has-icon-left">
+                                            @Html.PasswordFor(m => m.Password, new { @class = "form-control", @placeholder = @"" + HajHakathon.Resources.GbResoures.LoginPassword + @"" })
+                                            @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
+                                            
+                                            <input type="hidden" class="form-control" name="LoginItem" placeholder=""   required>
+                                            <div class="form-control-position">
+                                                <i class="la la-key"></i>
+                                            </div>
+                                        </fieldset>
+                                            <div class="form-group row">
+                                                <button type="submit" class="btn btn-outline-info btn-block"><i class="ft-unlock"></i>@HajHakathon.Resources.GbResoures.Login</button>
+                                             </div>
+                                                <div class="form-group row">
+
+                                                    <div class="col-md-12 col-12 float-sm-left text-center text-sm-center"><a href="recover-password.html" class="card-link">@HajHakathon.Resources.GbResoures.ForgetPassword</a></div>
+                                                </div>
+
+                                                <!---->
+                                               
+                                                    
+                                                 <div class="form-group row">
+                                                     <div class="col-md-12 col-12 float-sm-left text-center text-sm-center">
+                                                         @if (lngflgtext == "flag-icon-sa")
+                                                         {
+                                                            <a class="card-link" href="@Url.Action("Change","Language",new {LanguageAbbrevation="en" , flagval="flag-icon-gb",returnUrl= Request.Url.AbsoluteUri})"><i class="flag-icon flag-icon-gb"></i> English</a>
+
+
+                                                         }
+                                                         else
+                                                         {
+
+                                                            <a class="card-link" href="@Url.Action("Change","Language",new {LanguageAbbrevation="ar-AE" , flagval="flag-icon-sa",returnUrl= Request.Url.AbsoluteUri})"><i class="flag-icon flag-icon-sa"></i> العربية</a>
+                                                         }
+
+                                                    </div>
+                                                     </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                                     }
+
+                                       
+                                      
+                                           @if (ViewBag.Messges != null)
+                                           {
+                                            <div class="row alert round bg-danger">
+
+                                                <strong>@ViewBag.Messges</strong>
+                                            </div>
+                                           }
+                                            
+                                     
+
+
+
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </div>
+    <!-- ////////////////////////////////////////////////////////////////////////////-->
+    <!-- BEGIN VENDOR JS-->
+    <script src=@Url.Content("~/Content/app-assets/vendors/js/vendors.min.js") type="text/javascript"></script>
+    <!-- BEGIN VENDOR JS-->
+    <!-- BEGIN PAGE VENDOR JS-->
+    <script src=@Url.Content("~/Content/app-assets/vendors/js/forms/validation/jqBootstrapValidation.js")
+            type="text/javascript"></script>
+    <script src=@Url.Content("~/Content/app-assets/vendors/js/forms/icheck/icheck.min.js") type="text/javascript"></script>
+    <!-- END PAGE VENDOR JS-->
+    <!-- BEGIN MODERN JS-->
+    <script src=@Url.Content("~/Content/app-assets/js/core/app-menu.js") type="text/javascript"></script>
+    <script src=@Url.Content("~/Content/app-assets/js/core/app.js") type="text/javascript"></script>
+    <!-- END MODERN JS-->
+    <!-- BEGIN PAGE LEVEL JS-->
+    <script src=@Url.Content("~/Content/app-assets/js/scripts/forms/form-login-register.js") type="text/javascript"></script>
+    <!-- END PAGE LEVEL JS-->
+</body>
+</html>

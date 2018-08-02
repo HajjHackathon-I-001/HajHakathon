@@ -1,0 +1,352 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="LabickModelStoreContainer" CdmEntityContainer="LabickEntities">
+    <EntitySetMapping Name="G_AirLineCompany">
+      <EntityTypeMapping TypeName="LabickModel.G_AirLineCompany">
+        <MappingFragment StoreEntitySet="G_AirLineCompany">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="NameAr" ColumnName="NameAr" />
+          <ScalarProperty Name="NameEn" ColumnName="NameEn" />
+          <ScalarProperty Name="Code" ColumnName="Code" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Tel" ColumnName="Tel" />
+          <ScalarProperty Name="Fax" ColumnName="Fax" />
+          <ScalarProperty Name="TypeID" ColumnName="TypeID" />
+          <ScalarProperty Name="TravelID" ColumnName="TravelID" />
+          <ScalarProperty Name="ComeFrom" ColumnName="ComeFrom" />
+          <ScalarProperty Name="ComeTo" ColumnName="ComeTo" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="CreatedUserID" ColumnName="CreatedUserID" />
+          <ScalarProperty Name="LastUpdatedDate" ColumnName="LastUpdatedDate" />
+          <ScalarProperty Name="LastUpdatedUserID" ColumnName="LastUpdatedUserID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="G_Companies">
+      <EntityTypeMapping TypeName="LabickModel.G_Companies">
+        <MappingFragment StoreEntitySet="G_Companies">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="NameAr" ColumnName="NameAr" />
+          <ScalarProperty Name="NameEn" ColumnName="NameEn" />
+          <ScalarProperty Name="Code" ColumnName="Code" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Tel" ColumnName="Tel" />
+          <ScalarProperty Name="Fax" ColumnName="Fax" />
+          <ScalarProperty Name="TypeID" ColumnName="TypeID" />
+          <ScalarProperty Name="HamalaName" ColumnName="HamalaName" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="CreatedUserID" ColumnName="CreatedUserID" />
+          <ScalarProperty Name="LastUpdatedDate" ColumnName="LastUpdatedDate" />
+          <ScalarProperty Name="LastUpdatedUserID" ColumnName="LastUpdatedUserID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="G_TawafCompany">
+      <EntityTypeMapping TypeName="LabickModel.G_TawafCompany">
+        <MappingFragment StoreEntitySet="G_TawafCompany">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="NameAr" ColumnName="NameAr" />
+          <ScalarProperty Name="NameEn" ColumnName="NameEn" />
+          <ScalarProperty Name="Code" ColumnName="Code" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Tel" ColumnName="Tel" />
+          <ScalarProperty Name="Fax" ColumnName="Fax" />
+          <ScalarProperty Name="TypeID" ColumnName="TypeID" />
+          <ScalarProperty Name="CityID" ColumnName="CityID" />
+          <ScalarProperty Name="TasreehID" ColumnName="TasreehID" />
+          <ScalarProperty Name="HamlaID" ColumnName="HamlaID" />
+          <ScalarProperty Name="ComeFrom" ColumnName="ComeFrom" />
+          <ScalarProperty Name="ComeTo" ColumnName="ComeTo" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="CreatedUserID" ColumnName="CreatedUserID" />
+          <ScalarProperty Name="LastUpdatedDate" ColumnName="LastUpdatedDate" />
+          <ScalarProperty Name="LastUpdatedUserID" ColumnName="LastUpdatedUserID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="G_TawafCompany_User">
+      <EntityTypeMapping TypeName="LabickModel.G_TawafCompany_User">
+        <MappingFragment StoreEntitySet="G_TawafCompany_User">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="CompanyID" ColumnName="CompanyID" />
+          <ScalarProperty Name="G_UserID" ColumnName="G_UserID" />
+          <ScalarProperty Name="TasreehID" ColumnName="TasreehID" />
+          <ScalarProperty Name="HamlaID" ColumnName="HamlaID" />
+          <ScalarProperty Name="ComeFrom" ColumnName="ComeFrom" />
+          <ScalarProperty Name="ComeTo" ColumnName="ComeTo" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="CreatedUserID" ColumnName="CreatedUserID" />
+          <ScalarProperty Name="LastUpdatedDate" ColumnName="LastUpdatedDate" />
+          <ScalarProperty Name="LastUpdatedUserID" ColumnName="LastUpdatedUserID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Sys_Cities">
+      <EntityTypeMapping TypeName="LabickModel.Sys_Cities">
+        <MappingFragment StoreEntitySet="Sys_Cities">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="NameAr" ColumnName="NameAr" />
+          <ScalarProperty Name="NameEn" ColumnName="NameEn" />
+          <ScalarProperty Name="CountrayID" ColumnName="CountrayID" />
+          <ScalarProperty Name="Code" ColumnName="Code" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="CreatedUserID" ColumnName="CreatedUserID" />
+          <ScalarProperty Name="LastUpdatedDate" ColumnName="LastUpdatedDate" />
+          <ScalarProperty Name="LastUpdatedUserID" ColumnName="LastUpdatedUserID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Sys_Countaries">
+      <EntityTypeMapping TypeName="LabickModel.Sys_Countaries">
+        <MappingFragment StoreEntitySet="Sys_Countaries">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="NameAr" ColumnName="NameAr" />
+          <ScalarProperty Name="NameEn" ColumnName="NameEn" />
+          <ScalarProperty Name="Code" ColumnName="Code" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="CreatedUserID" ColumnName="CreatedUserID" />
+          <ScalarProperty Name="LastUpdatedDate" ColumnName="LastUpdatedDate" />
+          <ScalarProperty Name="LastUpdatedUserID" ColumnName="LastUpdatedUserID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Sys_Languages">
+      <EntityTypeMapping TypeName="LabickModel.Sys_Languages">
+        <MappingFragment StoreEntitySet="Sys_Languages">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="NameAr" ColumnName="NameAr" />
+          <ScalarProperty Name="NameEn" ColumnName="NameEn" />
+          <ScalarProperty Name="Code" ColumnName="Code" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="CreatedUserID" ColumnName="CreatedUserID" />
+          <ScalarProperty Name="LastUpdatedDate" ColumnName="LastUpdatedDate" />
+          <ScalarProperty Name="LastUpdatedUserID" ColumnName="LastUpdatedUserID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Sys_Menues">
+      <EntityTypeMapping TypeName="LabickModel.Sys_Menues">
+        <MappingFragment StoreEntitySet="Sys_Menues">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="NameAr" ColumnName="NameAr" />
+          <ScalarProperty Name="NameEn" ColumnName="NameEn" />
+          <ScalarProperty Name="Action" ColumnName="Action" />
+          <ScalarProperty Name="Controller" ColumnName="Controller" />
+          <ScalarProperty Name="Area" ColumnName="Area" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="Regdate" ColumnName="Regdate" />
+          <ScalarProperty Name="ReguserID" ColumnName="ReguserID" />
+          <ScalarProperty Name="ParentID" ColumnName="ParentID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Sys_Roles">
+      <EntityTypeMapping TypeName="LabickModel.Sys_Roles">
+        <MappingFragment StoreEntitySet="Sys_Roles">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="NameAr" ColumnName="NameAr" />
+          <ScalarProperty Name="NameEn" ColumnName="NameEn" />
+          <ScalarProperty Name="Code" ColumnName="Code" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="CreatedUserID" ColumnName="CreatedUserID" />
+          <ScalarProperty Name="LastUpdatedDate" ColumnName="LastUpdatedDate" />
+          <ScalarProperty Name="LastUpdatedUserID" ColumnName="LastUpdatedUserID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Sys_Types">
+      <EntityTypeMapping TypeName="LabickModel.Sys_Types">
+        <MappingFragment StoreEntitySet="Sys_Types">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="NameAr" ColumnName="NameAr" />
+          <ScalarProperty Name="NameEn" ColumnName="NameEn" />
+          <ScalarProperty Name="Code" ColumnName="Code" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="CreatedUserID" ColumnName="CreatedUserID" />
+          <ScalarProperty Name="LastUpdatedDate" ColumnName="LastUpdatedDate" />
+          <ScalarProperty Name="LastUpdatedUserID" ColumnName="LastUpdatedUserID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Sys_Users">
+      <EntityTypeMapping TypeName="LabickModel.Sys_Users">
+        <MappingFragment StoreEntitySet="Sys_Users">
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="UsrName" ColumnName="UsrName" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="NameAr" ColumnName="NameAr" />
+          <ScalarProperty Name="NameEn" ColumnName="NameEn" />
+          <ScalarProperty Name="BirthDate" ColumnName="BirthDate" />
+          <ScalarProperty Name="Gender" ColumnName="Gender" />
+          <ScalarProperty Name="CountaryID" ColumnName="CountaryID" />
+          <ScalarProperty Name="MobileNumber" ColumnName="MobileNumber" />
+          <ScalarProperty Name="IdentityNumber" ColumnName="IdentityNumber" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Passport" ColumnName="Passport" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="CreatedUserID" ColumnName="CreatedUserID" />
+          <ScalarProperty Name="LastUpdatedDate" ColumnName="LastUpdatedDate" />
+          <ScalarProperty Name="LastUpdatedUserID" ColumnName="LastUpdatedUserID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Sys_UsersAndRoles">
+      <EntityTypeMapping TypeName="LabickModel.Sys_UsersAndRoles">
+        <MappingFragment StoreEntitySet="Sys_UsersAndRoles">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="RoleID" ColumnName="RoleID" />
+          <ScalarProperty Name="MenueID" ColumnName="MenueID" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="Regdate" ColumnName="Regdate" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="CreatedUserID" ColumnName="CreatedUserID" />
+          <ScalarProperty Name="LastUpdatedDate" ColumnName="LastUpdatedDate" />
+          <ScalarProperty Name="LastUpdateUserID" ColumnName="LastUpdateUserID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="G_AirLineCompany_User">
+      <EntityTypeMapping TypeName="LabickModel.G_AirLineCompany_User">
+        <MappingFragment StoreEntitySet="G_AirLineCompany_User">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="CompanyID" ColumnName="CompanyID" />
+          <ScalarProperty Name="G_UserID" ColumnName="G_UserID" />
+          <ScalarProperty Name="TravelID" ColumnName="TravelID" />
+          <ScalarProperty Name="ComeFrom" ColumnName="ComeFrom" />
+          <ScalarProperty Name="ComeTo" ColumnName="ComeTo" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="CreatedUserID" ColumnName="CreatedUserID" />
+          <ScalarProperty Name="LastUpdatedDate" ColumnName="LastUpdatedDate" />
+          <ScalarProperty Name="LastUpdatedUserID" ColumnName="LastUpdatedUserID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Devices">
+      <EntityTypeMapping TypeName="LabickModel.Devices">
+        <MappingFragment StoreEntitySet="Devices">
+          <ScalarProperty Name="DeviceName" ColumnName="DeviceName" />
+          <ScalarProperty Name="DeviceIdentity" ColumnName="DeviceIdentity" />
+          <ScalarProperty Name="DeviceId" ColumnName="DeviceId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EPCs">
+      <EntityTypeMapping TypeName="LabickModel.EPCs">
+        <MappingFragment StoreEntitySet="EPCs">
+          <ScalarProperty Name="EPC" ColumnName="EPC" />
+          <ScalarProperty Name="EPCId" ColumnName="EPCId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Sys_Area">
+      <EntityTypeMapping TypeName="LabickModel.Sys_Area">
+        <MappingFragment StoreEntitySet="Sys_Area">
+          <ScalarProperty Name="MaxInArea" ColumnName="MaxInArea" />
+          <ScalarProperty Name="AreaNameEn" ColumnName="AreaNameEn" />
+          <ScalarProperty Name="AreaNameAr" ColumnName="AreaNameAr" />
+          <ScalarProperty Name="CityId" ColumnName="CityId" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TagEvents">
+      <EntityTypeMapping TypeName="LabickModel.TagEvents">
+        <MappingFragment StoreEntitySet="TagEvents">
+          <ScalarProperty Name="AntennaLocationId" ColumnName="AntennaLocationId" />
+          <ScalarProperty Name="DeviceLocationId" ColumnName="DeviceLocationId" />
+          <ScalarProperty Name="DecodedUserMemoryId" ColumnName="DecodedUserMemoryId" />
+          <ScalarProperty Name="DecodedEPCId" ColumnName="DecodedEPCId" />
+          <ScalarProperty Name="DecodeAlgorithmId" ColumnName="DecodeAlgorithmId" />
+          <ScalarProperty Name="UserMemoryId" ColumnName="UserMemoryId" />
+          <ScalarProperty Name="SerialNumberId" ColumnName="SerialNumberId" />
+          <ScalarProperty Name="EPCId" ColumnName="EPCId" />
+          <ScalarProperty Name="ModelId" ColumnName="ModelId" />
+          <ScalarProperty Name="ManufacturerId" ColumnName="ManufacturerId" />
+          <ScalarProperty Name="AntennaId" ColumnName="AntennaId" />
+          <ScalarProperty Name="DeviceId" ColumnName="DeviceId" />
+          <ScalarProperty Name="ChannelId" ColumnName="ChannelId" />
+          <ScalarProperty Name="TagEventId" ColumnName="TagEventId" />
+          <ScalarProperty Name="UtcTimestamp" ColumnName="UtcTimestamp" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Sys_ChekPoints">
+      <EntityTypeMapping TypeName="LabickModel.Sys_ChekPoints">
+        <MappingFragment StoreEntitySet="Sys_ChekPoints">
+          <ScalarProperty Name="chekpointNameEn" ColumnName="chekpointNameEn" />
+          <ScalarProperty Name="chekpointNameAr" ColumnName="chekpointNameAr" />
+          <ScalarProperty Name="RFIDDeviceID" ColumnName="RFIDDeviceID" />
+          <ScalarProperty Name="AreaID" ColumnName="AreaID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Sys_Zone">
+      <EntityTypeMapping TypeName="LabickModel.Sys_Zone">
+        <MappingFragment StoreEntitySet="Sys_Zone">
+          <ScalarProperty Name="MaxCount" ColumnName="MaxCount" />
+          <ScalarProperty Name="OutDeviceID" ColumnName="OutDeviceID" />
+          <ScalarProperty Name="InDeviceID" ColumnName="InDeviceID" />
+          <ScalarProperty Name="AreaID" ColumnName="AreaID" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="G_Users">
+      <EntityTypeMapping TypeName="LabickModel.G_Users">
+        <MappingFragment StoreEntitySet="G_Users">
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="TasreeeNumber" ColumnName="TasreeeNumber" />
+          <ScalarProperty Name="IdentityNumber" ColumnName="IdentityNumber" />
+          <ScalarProperty Name="MobileNumber" ColumnName="MobileNumber" />
+          <ScalarProperty Name="BlodGroup" ColumnName="BlodGroup" />
+          <ScalarProperty Name="IsNedded" ColumnName="IsNedded" />
+          <ScalarProperty Name="VisaIssuance" ColumnName="VisaIssuance" />
+          <ScalarProperty Name="PortNumber" ColumnName="PortNumber" />
+          <ScalarProperty Name="LanguageID" ColumnName="LanguageID" />
+          <ScalarProperty Name="CountaryID" ColumnName="CountaryID" />
+          <ScalarProperty Name="PassportSource" ColumnName="PassportSource" />
+          <ScalarProperty Name="TouchID" ColumnName="TouchID" />
+          <ScalarProperty Name="Photo" ColumnName="Photo" />
+          <ScalarProperty Name="Gender" ColumnName="Gender" />
+          <ScalarProperty Name="TawafaCompanyID" ColumnName="TawafaCompanyID" />
+          <ScalarProperty Name="AirLinesCompanyID" ColumnName="AirLinesCompanyID" />
+          <ScalarProperty Name="BarcodeIQ" ColumnName="BarcodeIQ" />
+          <ScalarProperty Name="VisaNumber" ColumnName="VisaNumber" />
+          <ScalarProperty Name="BirthDate" ColumnName="BirthDate" />
+          <ScalarProperty Name="PassportID" ColumnName="PassportID" />
+          <ScalarProperty Name="NameEn" ColumnName="NameEn" />
+          <ScalarProperty Name="NameAr" ColumnName="NameAr" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

@@ -1,0 +1,114 @@
+﻿@using HajHakathon.Models
+@{ 
+    LabickEntities db = new LabickEntities();
+
+    var LogingUser = Session["LoggedInUser"] as Sys_Users;
+    Sys_Menues Menu = new Sys_Menues();
+   
+
+}
+<div class="main-menu menu-fixed menu-light menu-accordion    menu-shadow " data-scroll-to-active="true">
+    <div class="main-menu-content">
+        <ul class="navigation navigation-main" id="main-menu-navigation" data-menu="menu-navigation">
+        
+
+            <li class="nav-item @Html.RouteIf("Index","AdminHome","active")">
+                <a href=@Url.Action("Index", "AdminHome")><i class="la la-cogs"></i><span class="menu-title">@HajHakathon.Resources.GbResoures.ApplecationSettings</span></a>
+                <ul class="menu-content">
+                    
+                    <li class="@Html.RouteIf("Index","Countaries","active")">
+                        <a class="menu-item" href=@Url.Action("Index", "Countaries")><i class="la ft-layers"></i>الدول</a>
+                    </li>
+                    <li class="@Html.RouteIf("Index","Cities", "active")">
+                        <a class="menu-item" href=@Url.Action("Index", "Cities")><i class="la ft-check-square"></i>المدن</a>
+                    </li>
+                    <li class="@Html.RouteIf("Index","Types","active")">
+                        <a class="menu-item" href=@Url.Action("Index", "Types")><i class="la ft-list"></i>انواع الشركات</a>
+                    </li>
+
+                    <li class="@Html.RouteIf("Index","G_AirLineCompany","active")">
+                        <a class="menu-item" href=@Url.Action("Index", "G_AirLineCompany")><i class="la ft-list"></i>شركات الطيران</a>
+                    </li>
+                    <li class="@Html.RouteIf("Index","G_TawafCompany","active")">
+                        <a class="menu-item" href=@Url.Action("Index", "G_TawafCompany")><i class="la ft-list"></i>شركات الطوافه</a>
+                    </li>
+                    <li class="@Html.RouteIf("Index","G_AirLineCompany_User","active")">
+                        <a class="menu-item" href=@Url.Action("Index", "G_AirLineCompany_User")><i class="la ft-list"></i>شركات الخطوط الخاصه بالحاج</a>
+                    </li>
+                    <li class="@Html.RouteIf("Index","G_TawafCompany_User","active")">
+                        <a class="menu-item" href=@Url.Action("Index", "G_TawafCompany_User")><i class="la ft-list"></i>شركات الطوافه الخاصه بالحاج</a>
+                    </li>
+                    <li class="@Html.RouteIf("Index","G_Users","active")">
+                        <a class="menu-item" href=@Url.Action("Index", "G_Users")><i class="la ft-list"></i>الحجاج</a>
+                    </li>
+                     
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                    
+                </ul>
+            </li>
+             <!---------------------------------------->
+            <li class="nav-item @Html.RouteIf("Index","SysUsers","active")">
+                <a href=@Url.Action("Index", "SysUsers")><i class="la la-users"></i><span class="menu-title">@HajHakathon.Resources.GbResoures.usersMangmentsSettings</span></a>
+                <ul class="menu-content">
+
+                    <li class="@Html.RouteIf("Index","SysRoles", "active")">
+                        <a class="menu-item" href=@Url.Action("Index", "SysRoles")><i class="la la-user-plus"></i>الصلاحيات</a>
+                    </li>
+                    <li class="@Html.RouteIf("Index","UsersAndRoles", "active")">
+                        <a class="menu-item" href=@Url.Action("Index", "UsersAndRoles")><i class="la la-user-secret"></i>صلاحيات المستخدمين</a>
+                    </li>
+                    
+                </ul>
+            </li>
+            <!---------------------------------------->
+            <li class="nav-item @Html.RouteIf("Index","SysArea","active")">
+                <a href=@Url.Action("Index", "SysArea")><i class="la ft-map-pin"></i><span class="menu-title">اعدادات المواقع </span></a>
+                <ul class="menu-content">
+                    <li class="@Html.RouteIf("Index","SysArea", "active")">
+                        <a class="menu-item" href=@Url.Action("Index", "SysArea")><i class="la ft-server"></i>اعدادات المواقع</a>
+                    </li>
+                    <li class="@Html.RouteIf("Index","SysChekPoints", "active")">
+                        <a class="menu-item" href=@Url.Action("Index", "SysChekPoints")><i class="la ft-radio"></i>اعدادات نقاط التحقق </a>
+                    </li>
+                    @*<li class="@Html.RouteIf("Index","CompanyMedDevices", "active")">
+                        <a class="menu-item" href=@Url.Action("Index", "CompanyMedDevices")><i class="la ft-airplay"></i>@HajHakathon.Resources.GbResoures.CompanyDevicesSettings</a>
+                    </li>*@
+                    
+
+                </ul>
+            </li>
+            <!---------------------------------------->
+            @*<li class="nav-item @Html.RouteIf("Index","RFIDDevice","active")">
+                <a href=@Url.Action("Index", "RFIDDevice")><i class="la ft-monitor"></i><span class="menu-title">اعدادات اجهزة RFID</span></a>
+                <ul class="menu-content">
+                    <li class="@Html.RouteIf("Index","RFIDDevice", "active")">
+                        <a class="menu-item" href=@Url.Action("Index", "RFIDDevice")><i class="la ft-server"></i>قائمة اجهزة RFID</a>
+                    </li>
+                    <li class="@Html.RouteIf("Index","ReaderAntenna", "active")">
+                        <a class="menu-item" href=@Url.Action("Index", "ReaderAntenna")><i class="la ft-radio"></i>قائمة اللواقط للباركود الاكتروني</a>
+                    </li>
+                    <li class="@Html.RouteIf("Index","CompanyMedDevices", "active")">
+                        <a class="menu-item" href=@Url.Action("Index", "CompanyMedDevices")><i class="la ft-airplay"></i>@HajHakathon.Resources.GbResoures.CompanyDevicesSettings</a>
+                    </li>
+
+
+                </ul>
+            </li>*@
+        </ul>
+    </div>
+</div>
